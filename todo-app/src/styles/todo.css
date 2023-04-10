@@ -23,7 +23,7 @@ html::-webkit-scrollbar {
 
 /* main.js CSS End */
 
-/* todo.js CSS Start */
+/* todos.js CSS Start */
 
 .menu{
     margin-right: 69%;
@@ -51,4 +51,8 @@ html::-webkit-scrollbar {
     margin-top: 0;
 }
 
-/* todo.js CSS End */
+#item {
+    font-size: smaller;
+}
+
+/* todos.js CSS End */
