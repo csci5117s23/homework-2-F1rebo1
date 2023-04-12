@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }) {
   }, [])
   return load && (
     <>
-      <ClerkProvider {...pageProps} >
+      <ClerkProvider {...pageProps} publishableKey="pk_test_c3VwcmVtZS1zdGFyZmlzaC0yNy5jbGVyay5hY2NvdW50cy5kZXYk">
         {/* <head>
             <meta charSet="utf-8"></meta>
             <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
