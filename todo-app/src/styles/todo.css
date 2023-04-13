@@ -48,7 +48,7 @@ html::-webkit-scrollbar {
 }
 
 .head {
-    margin-top: 0;
+    margin-top: 5%;
 }
 
 #item {
@@ -56,3 +56,12 @@ html::-webkit-scrollbar {
 }
 
 /* todos.js CSS End */
+
+/* Sidebar.js CSS Start */
+
+aside {
+    margin-top: 15%;
+    margin-bottom: 15%;
+}
+
+/* Sidebar.js CSS End */

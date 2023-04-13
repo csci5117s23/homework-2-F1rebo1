@@ -21,9 +21,10 @@ export default function App({ Component, pageProps }) {
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"></link>
         </div>
         <div className="App">
-          <header className="App-header">
+          {/* <header className="App-header">
             <Component {...pageProps}></Component>
-          </header>
+          </header> */}
+          <Component {...pageProps}></Component>
         </div>
       </ClerkProvider>
     </>
