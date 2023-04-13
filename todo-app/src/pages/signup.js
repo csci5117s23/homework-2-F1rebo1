@@ -1,4 +1,3 @@
-import { SignUp } from "@clerk/nextjs";
 import { ClerkProvider, SignedIn, SignIn } from "@clerk/clerk-react";
 
 const SignUpPage = () => (
@@ -6,11 +5,5 @@ const SignUpPage = () => (
   //  redirectUrl="/todos"/>
   <SignIn redirectUrl="/todos"/>
 );
-
-// function SignInPage() {
-//   return (
-//     <SignIn />
-//   );
-// }
 
 export default SignUpPage;
