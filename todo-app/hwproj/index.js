@@ -3,13 +3,97 @@
 * Auto generated Codehooks (c) example
 * Install: npm i codehooks-js codehooks-crudlify
 */
-import {app} from 'codehooks-js'
+import {app, Datastore} from 'codehooks-js'
 import {crudlify} from 'codehooks-crudlify'
+import { date, object, string, number, boolean} from 'yup';
+import jwtDecode from 'jwt-decode';
 
-// test route for https://<PROJECTID>.api.codehooks.io/dev/
+const todoYup = object({
+  taskDescription: number().required(),
+  taskId: string().required(),
+  isCompleted: boolean().required(),
+  category: string()
+  // createdOn: date().default(() => new Date()),
+})
+
+const userAuth = async (req, res, next) => {
+  try {
+    const { authorization } = req.headers;
+    if (authorization) {
+      const token = authorization.replace('Bearer ','');
+      // NOTE this doesn't validate, but we don't need it to. codehooks is doing that for us.
+      const token_parsed = jwtDecode(token);
+      req.user_token = token_parsed;
+    }
+    next();
+  } catch (error) {
+    next(error);
+  } 
+}
+app.use(userAuth)
+
+// some extra logic for GET / and POST / requests.
+app.use('/todos', (req, res, next) => {
+  if (req.method === "POST") {
+      // always save authenticating user Id token.
+      // note -- were not enforcing uniqueness which isn't great.
+      // we don't currently have a great way to do this -- one option would be to 
+      // have a user collection track which collections have been filled
+      // It's a limitation for sure, but I'll just make that a front-end problem...
+
+      console.log("Check Post")
+      // req.body.userId = req.user_token.sub
+  } else if (req.method === "GET") {
+      // on "index" -- always check for authentication.
+
+      console.log("User ID " + req?.params?.ID);
+      console.log("uid " + req?.params?.userId);
+      console.log("Check Get")
+      // req.query.userId = req.user_token.sub
+  }
+  next();
+})
+
+app.get('/todos', (req,res) => {
+  console.log('We here');
+  res.send('Hello good sir');
+})
+
+// some extra logic for GET /id and PUT /id DELETE /id PATCH /id requests.
+// side effect here will break patch patch by query, but that's OK for my purposes.
+app.use('/todo/:id', async (req, res, next) => {
+  const id = req.params.ID;
+  console.log('Check todo id')
+  // const userId = req.user_token.sub
+  // let's check access rights for the document being read/updated/replaced/deleted
+
+  const conn = await Datastore.open();
+  try {
+      console.log(id);
+      const doc = await conn.getOne('user', id)
+      if (doc.userId != userId) {
+          // authenticate duser doesn't own this document.
+          res.status(403).end(); // end is like "quit this request"
+          return
+      }
+  } catch (e) {
+      console.log(e);
+      // the document doesn't exist.
+      res.status(404).end(e);
+      return;
+  }
+  // if we don't crash out -- call next and let crudlify deal with the details...
+  next();
+})
+
+app.get("/test", (req, res) => {
+  res.json({result: "you did it!"});
+});
+
+// test route for https://hwproj-frii.api.codehooks.io/dev
 app.get('/', (req, res) => {
-  res.send('CRUD server ready')
   console.log('Hungala Mungala Pongal Pongal')
+  res.send('CRUD server ready')
 })
 
 // routehook function
@@ -21,8 +105,35 @@ function helloFunc(req, res) {
 // REST hook
 app.get('/hello', helloFunc);
 
+// Functionality to read all todo items
+// app.get('/todos', (req, res) => {
+//   console.log('Read todo items!')
+//   res.send('CRUD server ready')
+// })
+
+// Functionality to read all completed/done todo items
+app.get('/done', function (req, res) {
+  const {id} = req.params;
+  console.log("Read this", id);
+  res.send('Done')
+})
+
+// Functionality to read all undone todo items
+// app.get('/todos', function (req, res) {
+//   const {id} = req.params;
+//   console.log("Read this", id);
+//   res.send('Done')
+// })
+
+// Functionality to open/read a specific todo item
+app.get('/todo/:id', function (req, res) {
+  const {id} = req.params;
+  console.log("Read this", id);
+  res.send('Done')
+})
+
 // Use Crudlify to create a REST API for any collection
-// crudlify(app)
+crudlify(app)
 
 // bind to serverless runtime
 export default app.init();
