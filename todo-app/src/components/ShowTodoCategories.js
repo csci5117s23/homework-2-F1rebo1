@@ -1,7 +1,7 @@
 import Sidebar from "@/components/sidebar";
 import { useState, useEffect } from "react";
 import { useAuth } from '@clerk/nextjs';
-import { getCategoryTodoList, addTodo, getTodos, addCategory, getCategories } from "@/modules/Data.js";
+import { getCategoryTodoList, addTodo, getTodos } from "@/modules/Data.js";
 
 export default function ShowTodoCategories( { category } ){
     
@@ -31,6 +31,8 @@ export default function ShowTodoCategories( { category } ){
         process().then((res) => {
             console.log(res);
             setitems(res);
+        }).catch(() => {
+            router.push('/todos');
         });
     }, [isLoaded,!allowEdit])
 

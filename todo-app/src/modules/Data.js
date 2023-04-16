@@ -125,7 +125,7 @@ export async function getCategories(authToken,userId) {
 // }
 
 export async function getCategoryTodoList(authToken,userId,catName) {
-    const result = await fetch(backend_base+`/todos?category=${catName}&isCompleted=false`,{
+    const result = await fetch(backend_base+`/todos?userId=${userId}&category=${catName}&isCompleted=false`,{
         'method':'GET',
         'headers': {'Authorization': 'Bearer ' + authToken}
     })
@@ -133,7 +133,7 @@ export async function getCategoryTodoList(authToken,userId,catName) {
 }
 
 export async function getCategoryCompletedList(authToken,userId,catName) {
-    const result = await fetch(backend_base+`/done?category=${catName}&isCompleted=true`,{
+    const result = await fetch(backend_base+`/todos?userId=${userId}&category=${catName}&isCompleted=true`,{
         'method':'GET',
         'headers': {'Authorization': 'Bearer ' + authToken}
     })

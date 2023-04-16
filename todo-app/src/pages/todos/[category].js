@@ -1,4 +1,3 @@
-import Sidebar from "@/components/sidebar";
 import ShowTodoCategories from "@/components/ShowTodoCategories";
 import { useRouter } from "next/router";
 import { RedirectToSignIn, SignedIn, SignedOut, useAuth } from "@clerk/nextjs"

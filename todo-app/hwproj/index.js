@@ -110,11 +110,11 @@ function helloFunc(req, res) {
 app.get('/hello', helloFunc);
 
 // Functionality to open/read a specific todo item
-app.get('/todo/:id', function (req, res) {
-  const {id} = req.params;
-  console.log("Read this", id);
-  res.send('Done')
-})
+// app.get('/todo/:id', function (req, res) {
+//   const {id} = req.params;
+//   console.log("Read this", id);
+//   res.send('Done')
+// })
 
 app.put('/updateTodoList', async (req, res) => {
   const db = await Datastore.open();
@@ -128,6 +128,14 @@ app.put('/todos/:category', async (req, res) => {
   const db = await Datastore.open();
   const data = await db.replaceOne('todos',req.query._id,req.body);
   // const data = await db.updateOne('categories',req.query._id,req.body);
+  res.json(data);
+});
+
+app.put('/done/:category', async (req, res) => {
+  const db = await Datastore.open();
+  const data = await db.updateOne('todos',req.query._id,req.body);
+  // const data = await db.updateOne('categories',req.query._id,req.body);
+  console.log(data);
   res.json(data);
 });
 

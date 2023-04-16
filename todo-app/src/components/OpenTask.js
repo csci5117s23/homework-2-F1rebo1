@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAuth } from '@clerk/nextjs';
 import { getTodoItem, editTodoItem, addCategory, getCategories } from "@/modules/Data.js";
+import { useRouter } from "next/router";
 
 export default function OpenTask( {id} ){
     
@@ -9,6 +10,7 @@ export default function OpenTask( {id} ){
     const [openItem,setOpenItem] = useState("");
     const [allowEdit,setAllowEdit] = useState(false);
     const { isLoaded, userId, getToken } = useAuth();
+    const router = useRouter();
 
     useEffect(() => {
         async function process() {
@@ -25,6 +27,8 @@ export default function OpenTask( {id} ){
         }
         process().then((res) => {
             setOpenItem(res.taskDescription);
+        }).catch(() => {
+            router.push('/todos');
         });
     }, [isLoaded,!allowEdit])
 
