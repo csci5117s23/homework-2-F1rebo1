@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { useAuth } from '@clerk/nextjs';
-import { getTodoItem, editTodoItem } from "@/modules/Data.js";
+import { getTodoItem, editTodoItem, addCategory, getCategories } from "@/modules/Data.js";
 
 export default function OpenTask( {id} ){
     
+    const [catValue,setCatValue] = useState("");
+    const [catAdded,setCatAdded] = useState(false);
     const [openItem,setOpenItem] = useState("");
     const [allowEdit,setAllowEdit] = useState(false);
     const { isLoaded, userId, getToken } = useAuth();
@@ -38,6 +40,32 @@ export default function OpenTask( {id} ){
         setAllowEdit(true);
     }
 
+    async function setAddCategory(){
+        setCatAdded(true);
+    }
+
+    async function addCategoryType(catName) {
+        console.log("Do we make it here?")
+        console.log(catValue);
+        console.log(userId);
+        if(catAdded && catValue && userId) {
+            var item = {
+                userId: userId,
+                taskDescription: openItem,
+                // isCompleted: false,
+                category: catName
+            };
+            const token = await getToken({ template: "productivitycorner" })
+            await addCategory(token,item);
+            const res = await getCategories(token,userId);
+            console.log("RESULT: " + res);
+            setCatValue(res);
+            setCatAdded(false);
+            // console.log("Cat value: " + catValue);
+            console.log("This task id: " + id + " has the following category: " + catValue);
+        }
+    }
+
     if(!isLoaded) {
         return (<span> Loading {`:)`} </span>);
         // <progress class="progress is-small is-primary" max="100">15%</progress>
@@ -58,11 +86,26 @@ export default function OpenTask( {id} ){
                 </div>
                 </>
             );
+        }else if(catAdded){
+            openTaskContents = (
+                <>
+                    <div>
+                    <textarea
+                        className="textarea is-primary"
+                        placeholder="Add category"
+                        onChange={(e) => setCatValue(e.target.value)}
+                        rows="2"
+                    ></textarea>
+                    <button className="button is-success" onClick={() => {addCategoryType(catValue)}}>Confirm</button>
+                </div>
+                </>
+            );
         }else{
             openTaskContents = (
                 <>
                     <h4>{openItem}</h4><br></br>
                     <button className="button is-success" onClick={setToEdit}>Edit Task</button>
+                    <button className="button is-link" onClick={setAddCategory}>Set Category</button>
                 </>
             );
         }

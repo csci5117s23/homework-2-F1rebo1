@@ -7,7 +7,8 @@ export default function ShowTask(){
     const router = useRouter();
     const { isLoaded, userId, getToken } = useAuth();
 
-    const {category} = router.query;
+    const curPath = router.asPath;
+    const category = curPath.substring(curPath.lastIndexOf('/') + 1);
 
     if(!isLoaded){
         return (<span>Loading {`:)`}</span>);
@@ -15,10 +16,6 @@ export default function ShowTask(){
         return (
             <>
                 <SignedIn>
-                    <header className="head">
-                        <h1>Categories</h1>
-                    </header>
-                    <Sidebar></Sidebar>
                     <ShowCategories category={category}></ShowCategories>
                 </SignedIn>
                 <SignedOut>

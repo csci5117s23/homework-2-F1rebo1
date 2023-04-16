@@ -92,26 +92,40 @@ export async function deleteTodo(authToken,todo) {
     return await result.json();
 }
 
-export async function addCategory(authToken,catName) {
-    const result = await fetch(backend_base+`/todos/categories`,{
+export async function addCategory(authToken,item) {
+    const result = await fetch(backend_base+`/todos?userId=${item.userId}`,{
         'method':'POST',
         'headers': {'Authorization': 'Bearer ' + authToken,
         'Content-Type': 'application/json'},
-        'body': JSON.stringify(catName)
+        'body': JSON.stringify(item)
     })
     return await result.json();
 }
 
 export async function getCategories(authToken,userId) {
-    const result = await fetch(backend_base+`/categories?userId=${userId}`,{
+    const result = await fetch(backend_base+`/todos?userId=${userId}`,{
         'method':'GET',
         'headers': {'Authorization': 'Bearer ' + authToken}
     })
-    return await result.json();
+    return result;
 }
 
-export async function getCategoriesTodoList(authToken,userId,catName) {
-    const result = await fetch(backend_base+`/categories?userId=${userId}&isCompleted=false&catName=${catName}`,{
+// export async function setComplete(authToken,userId,taskId) {
+//     let taskData = (await getTodoItem(authToken,userId,taskId))[0];
+//     taskData.isCompleted = true;
+//     const result = fetch(`${backend_base}/updateTodoList?userId=${userId}&_id=${taskId}`, {
+//         'method': 'PUT',
+//         'headers': {
+//             'Authorization': 'Bearer ' + authToken,
+//             'Content-Type': 'application/json',
+//         },
+//         'body': JSON.stringify(taskData)
+//         });
+//     return result;
+// }
+
+export async function getCategoryTodoList(authToken,userId,catName) {
+    const result = await fetch(backend_base+`/todos?category=${catName}`,{
         'method':'GET',
         'headers': {'Authorization': 'Bearer ' + authToken}
     })
@@ -119,7 +133,7 @@ export async function getCategoriesTodoList(authToken,userId,catName) {
 }
 
 export async function getCategoryCompletedList(authToken,userId,catName) {
-    const result = await fetch(backend_base+`/categories?userId=${userId}&isCompleted=true&catName=${catName}`,{
+    const result = await fetch(backend_base+`/todos/categories?userId=${userId}&isCompleted=true&category=${catName}`,{
         'method':'GET',
         'headers': {'Authorization': 'Bearer ' + authToken}
     })

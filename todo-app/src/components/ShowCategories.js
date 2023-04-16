@@ -1,11 +1,12 @@
+import Sidebar from "@/components/sidebar";
 import { useState, useEffect } from "react";
 import { useAuth } from '@clerk/nextjs';
-import { getCategoryCompletedList, editTodoItem } from "@/modules/Data.js";
+import { getCategoryTodoList, editTodoItem } from "@/modules/Data.js";
 
 export default function ShowCategories( { category } ){
     
     const [items,setitems] = useState([]);
-    const [newTodoItem, setnewTodoItem] = useState("");
+    // const [newTodoItem, setnewTodoItem] = useState("");
     const [allowEdit,setAllowEdit] = useState(false);
     const { isLoaded, userId, getToken } = useAuth();
 
@@ -14,10 +15,10 @@ export default function ShowCategories( { category } ){
             if(userId){
                 try {
                     const token = await getToken({ template: "productivitycorner" });
-                    const res = await getCategoryCompletedList(token,userId,category);    //Get a list of all completed todo items from a certain category
+                    const res = await getCategoryTodoList(token,userId,category)    //Get a list of all todo items from a certain category
                     return res;
                 }catch (error) {
-                    console.error('Failed to open todo item', error);
+                    console.error('Failed to show tasks in this category', error);
                     return [];
                 }
             }
@@ -28,32 +29,33 @@ export default function ShowCategories( { category } ){
         });
     }, [isLoaded,!allowEdit])
 
-    async function viewAndEditTask(){
-        if(openItem && userId){
-            const token = await getToken({ template: "productivitycorner" })
-            await editTodoItem(token,userId,id,openItem);
-            setAllowEdit(false);
-        }
-    }
-
-    function setToEdit(){
-        setAllowEdit(true);
-    }
-
-    if(!isLoaded) {
-        return (<span> Loading {`:)`} </span>);
-    } else {
-        let openTaskContents = <div>HELLO there sir</div>;
-        if(allowEdit){
-            <div>Doing some other stuff</div>
-        }else{
-            <div>Doing some stuff</div>
-        }
-
+    if(!isLoaded){
+        return <span> Loading {`:)`} </span>
+    }else{
+        const itemList = items.map((item) => (
+            <li key={item._id}>
+                {item.taskDescription}<br></br>
+            </li>
+        ));
+        // console.log(itemList);
         return (
-            <div>
-                {openTaskContents}
-            </div>
+            <>
+                <header className="head">
+                    <h1>{category} todo items!</h1>
+                </header>
+                <Sidebar></Sidebar>
+                {itemList}
+                {/* <div className="flex-container">
+                    <ul>
+                        <textarea className="textarea is-primary" placeholder="Enter task description" value = {newTodoItem} rows="2"
+                            onChange={(e) => setnewTodoItem(e.target.value)}
+                            onKeyDown={(e) => { if(e.key === 'Enter'){addOrCreate()} }}></textarea>
+                        <button className="button is-primary" onClick = {addOrCreate}>Add task</button>
+                        {itemList}
+                    </ul>
+                </div> */}
+                {/* <MakeItem></MakeItem> */}
+            </>
         );
     }
 }

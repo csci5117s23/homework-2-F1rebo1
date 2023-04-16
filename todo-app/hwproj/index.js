@@ -11,13 +11,13 @@ import jwtDecode from 'jwt-decode';
 const todoYup = object({
   userId: string().required(),
   taskDescription: string().required(),
-  isCompleted: boolean().required(),
+  isCompleted: boolean().optional(),
   category: string().optional()
 })
 
 const categoryYup = object({
   userId: string().required(),
-  catName: string().required()
+  category: string().required()
 })
 
 
@@ -65,30 +65,30 @@ app.use(userAuth)
 
 // some extra logic for GET /id and PUT /id DELETE /id PATCH /id requests.
 // side effect here will break patch patch by query, but that's OK for my purposes.
-app.use('/todo/:id', async (req, res, next) => {
-  const id = req.params.ID;
-  console.log('Check todo id')
-  const userId = req.user_token.sub
-  // let's check access rights for the document being read/updated/replaced/deleted
+// app.use('/todo/:id', async (req, res, next) => {
+//   const id = req.params.ID;
+//   console.log('Check todo id')
+//   const userId = req.user_token.sub
+//   // let's check access rights for the document being read/updated/replaced/deleted
 
-  const conn = await Datastore.open();
-  try {
-      console.log(id);
-      const doc = await conn.getOne('user', id)
-      if (doc.userId != userId) {
-          // authenticate duser doesn't own this document.
-          res.status(403).end(); // end is like "quit this request"
-          return
-      }
-  } catch (e) {
-      console.log(e);
-      // the document doesn't exist.
-      res.status(404).end(e);
-      return;
-  }
-  // if we don't crash out -- call next and let crudlify deal with the details...
-  next();
-})
+//   const conn = await Datastore.open();
+//   try {
+//       console.log(id);
+//       const doc = await conn.getOne('user', id)
+//       if (doc.userId != userId) {
+//           // authenticate duser doesn't own this document.
+//           res.status(403).end(); // end is like "quit this request"
+//           return
+//       }
+//   } catch (e) {
+//       console.log(e);
+//       // the document doesn't exist.
+//       res.status(404).end(e);
+//       return;
+//   }
+//   // if we don't crash out -- call next and let crudlify deal with the details...
+//   next();
+// })
 
 app.get("/test", (req, res) => {
   res.json({result: "you did it!"});
@@ -119,6 +119,12 @@ app.get('/todo/:id', function (req, res) {
 app.put('/updateTodoList', async (req, res) => {
   const db = await Datastore.open();
   const data = await db.updateOne('todos',req.query._id,req.body);
+  res.json(data);
+});
+
+app.put('/todos/category', async (req, res) => {
+  const db = await Datastore.open();
+  const data = await db.updateOne('categories',req.query._id,req.body);
   res.json(data);
 });
 
