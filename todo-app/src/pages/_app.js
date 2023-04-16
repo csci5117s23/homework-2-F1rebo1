@@ -4,13 +4,40 @@ import '../styles/App.css';
 import '../styles/todo.css';
 import { ClerkProvider, SignedIn, SignedOut, RedirectToSignIn } from '@clerk/nextjs';
 import { useRouter } from 'next/router';
+import { Client } from "@clerk/clerk-sdk-node";
+
+const CLERK_API_BASE_URL = process.env.API_ENDPOINT;
+const CLERK_API_KEY = process.env.API_KEY;
+
+const clerk = new Client({
+  apiKey: CLERK_API_KEY,
+  apiBaseUrl: CLERK_API_BASE_URL,
+});
+
+const pubkey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
 export default function App({ Component, pageProps }) {
-  const pubkey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
   const [load, setLoad] = useState(false);
   useEffect(() => {
     setLoad(true)
   }, [])
+
+  // useEffect(()=>{
+  //   // Call Codehooks backend API
+  //   const fetchData = async () => {
+  //     const response = await fetch(`https://${API_ENDPOINT}/test`, {
+  //       method: "GET",
+  //       headers: { "x-apikey": API_KEY }
+  //     });
+  //     const data = await response.json();
+  //     // Change application state and reload
+  //     setMessage(data.message);
+  //     setVisits(data.visits);
+  //     setLoad(true)
+  //   }
+  //   fetchData();
+  // },[])
+
   return load && (
     <>
       <ClerkProvider {...pageProps}>
@@ -24,7 +51,7 @@ export default function App({ Component, pageProps }) {
           {/* <header className="App-header">
             <Component {...pageProps}></Component>
           </header> */}
-          <Component {...pageProps}></Component>
+          <Component {...pageProps} clerk={clerk}></Component>
         </div>
       </ClerkProvider>
     </>

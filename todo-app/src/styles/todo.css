@@ -26,9 +26,11 @@ html::-webkit-scrollbar {
 /* todos.js CSS Start */
 
 .menu{
+    /* margin-left: 5%; */
     margin-right: 69%;
-    min-width: fit-content;
-    min-height: 200px;
+    max-width: fit-content;
+    min-height: fit-content;
+    max-height: 40px;
 }
 
 .menu-list {
@@ -55,13 +57,24 @@ html::-webkit-scrollbar {
     font-size: smaller;
 }
 
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+    margin-bottom: 84%;
+    margin-left: 5%;
+    font-size: smaller;
+}
+
 /* todos.js CSS End */
 
 /* Sidebar.js CSS Start */
 
 aside {
+    margin-left: 15%;
     margin-top: 15%;
     margin-bottom: 15%;
+    max-height: fit-content;
 }
 
 /* Sidebar.js CSS End */

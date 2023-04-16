@@ -3,6 +3,16 @@ import {useState, useEffect} from 'react';
 import { isLoaded, useUser, SignIn } from "@clerk/clerk-react";
 import { getAuth } from "@clerk/nextjs/server";
 import { useAuth } from "@clerk/nextjs";
+import { Client } from '@clerk/nextjs/dist/api';
+
+
+// const CLERK_API_BASE_URL = process.env.API_ENDPOINT;
+// const CLERK_API_KEY = process.env.API_KEY;
+
+// const clerk = new Client({
+//   apiKey: CLERK_API_KEY,
+//   apiBaseUrl: CLERK_API_BASE_URL,
+// });
 
 export default function Homepage(){
     return (<>
@@ -18,16 +28,17 @@ export default function Homepage(){
 }
 
 function ContinueButton(){
-    // const { isLoaded, isSignedIn, user } = useUser();
-    const { isLoaded, isSignedIn, userId, sessionId, getToken } = useAuth();
+    const { isLoaded, isSignedIn, user } = useUser();
+    const { userId, sessionId, getToken } = useAuth();
     // const { userId, sessionId, getToken, isLoaded, isSignedIn, signOut, orgId, orgRole, orgSlug, } = useAuth();
     const fetchDataFromTemplate = async () => {
         try {
             const token = await Clerk.session.getToken({ template: 'productivitycorner' })
-            console.log(token);
-            console.log();
-            console.log("Is the user signed in?" + userId);
-            console.log("What is the session?" + sessionId);
+            // console.log(token);
+            // console.log("Is the user loaded and signed in?" + isLoaded && isSignedIn);
+            // console.log("Is the user signed in?" + userId);
+            // console.log("What is the session?" + sessionId);
+            // console.log("What is the session token?\n" + getToken());
         } catch(e) {
             console.log(e);
         }

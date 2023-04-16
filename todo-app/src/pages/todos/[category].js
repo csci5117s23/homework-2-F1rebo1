@@ -1,5 +1,5 @@
 import Sidebar from "@/components/sidebar";
-import OpenTask from "@/components/OpenTask";
+import ShowCategories from "@/components/ShowCategories";
 import { useRouter } from "next/router";
 import { RedirectToSignIn, SignedIn, SignedOut, useAuth } from "@clerk/nextjs"
 
@@ -7,7 +7,8 @@ export default function ShowTask(){
     const router = useRouter();
     const { isLoaded, userId, getToken } = useAuth();
 
-    const {id} = router.query;
+    const {category} = router.query;
+
     if(!isLoaded){
         return (<span>Loading {`:)`}</span>);
     }else{
@@ -15,10 +16,10 @@ export default function ShowTask(){
             <>
                 <SignedIn>
                     <header className="head">
-                        <h1>View Task!</h1>
+                        <h1>Categories</h1>
                     </header>
                     <Sidebar></Sidebar>
-                    <OpenTask id={id}></OpenTask>
+                    <ShowCategories category={category}></ShowCategories>
                 </SignedIn>
                 <SignedOut>
                     <RedirectToSignIn />
