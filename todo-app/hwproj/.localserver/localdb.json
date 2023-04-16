@@ -2,527 +2,234 @@
   [
     "todos",
     {
-      "1878281bf66-vd180i7dgpx5nx": {
+      "18788ac1ea5-ftf9q4notjs6mo": {
         "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "sdgtfhjhklkl",
+        "taskDescription": "Potato",
         "isCompleted": true,
         "category": "",
-        "_id": "1878281bf66-vd180i7dgpx5nx"
+        "_id": "18788ac1ea5-ftf9q4notjs6mo"
       },
-      "187828b7f03-dnr0ahmsa8yk47": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "sdfg",
-        "isCompleted": true,
-        "category": "",
-        "_id": "187828b7f03-dnr0ahmsa8yk47"
-      },
-      "18782dd111f-vd3gr7bl9etrxl": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "JSDKfjk;lsdjf",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18782dd111f-vd3gr7bl9etrxl"
-      },
-      "18782dd3501-ivfgi33w52nk4b": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "xdsgbfgm",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18782dd3501-ivfgi33w52nk4b"
-      },
-      "18782dd3b4a-ia76qf4gqap2qq": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "aszxdcgfhvgbhjn,m",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18782dd3b4a-ia76qf4gqap2qq"
-      },
-      "18782dd3fdd-qkqoi2bv21ox9q": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "defgf",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18782dd3fdd-qkqoi2bv21ox9q"
-      },
-      "18782dd4462-q9xir5h9ljv8vl": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "estg",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18782dd4462-q9xir5h9ljv8vl"
-      },
-      "18782dd483d-wor185761p9fqb": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "h",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18782dd483d-wor185761p9fqb"
-      },
-      "18782dd4be8-wgky90y6mnaaor": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "h",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18782dd4be8-wgky90y6mnaaor"
-      },
-      "18782dd5285-7iybt16og9mqa3": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "h",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18782dd5285-7iybt16og9mqa3"
-      },
-      "18782dd720e-v9jb41roq25drz": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "jalksjdf;lkjasdjflkasjd;lkfjalsdjlfjklasdjkjflksdjk;fljaklsdjflkja;klsdjkfljas;lkdfj;klasdj;faksdf",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18782dd720e-v9jb41roq25drz"
-      },
-      "18782de85b7-43y778l74pb2ga": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "ertyhgju",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18782de85b7-43y778l74pb2ga"
-      },
-      "18782e21e19-sivbq20u4srp23": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "fdr",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18782e21e19-sivbq20u4srp23"
-      },
-      "18782e22d3c-jfzheejt5borlf": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "fg",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18782e22d3c-jfzheejt5borlf"
-      },
-      "18782e23bcd-wobn6uyhs3vo5r": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "fgdfg",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18782e23bcd-wobn6uyhs3vo5r"
-      },
-      "18782e30f86-my8avcnuabnlyz": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "sdf",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18782e30f86-my8avcnuabnlyz"
-      },
-      "18782e3133d-xrurdfcda7oufx": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "sdf",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18782e3133d-xrurdfcda7oufx"
-      },
-      "18782fb719d-xyzulzdvc3lbvr": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "sdeg",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18782fb719d-xyzulzdvc3lbvr"
-      },
-      "18782fb7de0-2ushs6qeux4ncr": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "aegd",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18782fb7de0-2ushs6qeux4ncr"
-      },
-      "18783a1593a-su0bii59cqodhm": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "rethg",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18783a1593a-su0bii59cqodhm"
-      },
-      "18783a1d43b-cadz1o4gqritdh": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "afse",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18783a1d43b-cadz1o4gqritdh"
-      },
-      "18783a49124-hi47gti7g7oox1": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Hello",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18783a49124-hi47gti7g7oox1"
-      },
-      "18783a49da5-zwgls4vhtziob0": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Hellasdfsdf",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18783a49da5-zwgls4vhtziob0"
-      },
-      "18783b2fbcb-eq38vfbmr2hyo5": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "dsf",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18783b2fbcb-eq38vfbmr2hyo5"
-      },
-      "18783b303f4-nmpxx0x3a3p8ds": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "df",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18783b303f4-nmpxx0x3a3p8ds"
-      },
-      "18783cc2f3a-ugbu2r1gav8b09": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "g",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18783cc2f3a-ugbu2r1gav8b09"
-      },
-      "18783cc35ba-u97x38lgz4u4rh": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "f",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18783cc35ba-u97x38lgz4u4rh"
-      },
-      "18783cc4bd5-5p70jljhqp9z0n": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "dfsdf",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18783cc4bd5-5p70jljhqp9z0n"
-      },
-      "18783cc5036-8cw9pu5jt7mknk": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "dsf",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18783cc5036-8cw9pu5jt7mknk"
-      },
-      "18783cc54dc-5vnm4m0zsh6xzq": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "sdf",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18783cc54dc-5vnm4m0zsh6xzq"
-      },
-      "18783cca3f4-qqquhndcwbfhts": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "dsf",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18783cca3f4-qqquhndcwbfhts"
-      },
-      "18783ccbf66-fj7f15lg6xyauf": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "d",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18783ccbf66-fj7f15lg6xyauf"
-      },
-      "18783ccc2d4-tsl03ep0rxsdss": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "d",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18783ccc2d4-tsl03ep0rxsdss"
-      },
-      "18783ce3197-4o0hhqn5hbva6v": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "f",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18783ce3197-4o0hhqn5hbva6v"
-      },
-      "18783ce92ec-4rfsqbh1pfedky": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Hello Sir",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18783ce92ec-4rfsqbh1pfedky"
-      },
-      "18783ce99b1-1nkj2wp0tjf0ur": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Edit works!",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18783ce99b1-1nkj2wp0tjf0ur"
-      },
-      "18783df9e04-ab2k4z3su8w0mv": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Pongal",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18783df9e04-ab2k4z3su8w0mv"
-      },
-      "18783e085e7-93unnj7fesvq1f": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "asf",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18783e085e7-93unnj7fesvq1f"
-      },
-      "18786dc7960-h4vwuxsd4t1uir": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Hakuna Matata",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18786dc7960-h4vwuxsd4t1uir"
-      },
-      "1878713dd6f-4s1nl8yqtfek66": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Woah",
-        "isCompleted": false,
-        "category": "",
-        "_id": "1878713dd6f-4s1nl8yqtfek66"
-      },
-      "18787a2e240-tdg78lq4pipkrn": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Bello",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18787a2e240-tdg78lq4pipkrn"
-      },
-      "18787b13640-rsd0wdlka8t1o1": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Wassup",
-        "isCompleted": false,
-        "category": "",
-        "_id": "18787b13640-rsd0wdlka8t1o1"
-      },
-      "18787e29678-f4swyd9aurp5ta": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Wassup",
-        "isCompleted": true,
-        "category": "Cat",
-        "_id": "18787e29678-f4swyd9aurp5ta"
-      },
-      "18787ea9958-0r1vfgij8bth5m": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Wassup",
-        "isCompleted": true,
-        "category": "Cat",
-        "_id": "18787ea9958-0r1vfgij8bth5m"
-      },
-      "18787eaf9f8-e30jvpoq4cfydy": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Wassup",
-        "isCompleted": true,
-        "category": "Cat",
-        "_id": "18787eaf9f8-e30jvpoq4cfydy"
-      },
-      "18787eb7384-v0gt9llzassupw": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Wassup",
-        "isCompleted": true,
-        "category": "Cat",
-        "_id": "18787eb7384-v0gt9llzassupw"
-      },
-      "18787eb9aab-2mebee6jofuef6": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Wassup",
-        "isCompleted": true,
-        "category": "Cat",
-        "_id": "18787eb9aab-2mebee6jofuef6"
-      },
-      "18787ec22b0-us8e9152q4xdkd": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Wassup",
-        "isCompleted": true,
-        "category": "Cat",
-        "_id": "18787ec22b0-us8e9152q4xdkd"
-      },
-      "18787f4f605-viizfha2mqxy8d": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Wassup",
-        "isCompleted": true,
-        "category": "Cat",
-        "_id": "18787f4f605-viizfha2mqxy8d"
-      },
-      "1878806bcbf-4hd7pjamczd4o5": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Wassup",
-        "isCompleted": true,
-        "category": "Cat",
-        "_id": "1878806bcbf-4hd7pjamczd4o5"
-      },
-      "187881cc675-ptyalkgnu169lh": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Wassup",
-        "isCompleted": true,
-        "category": "Cat",
-        "_id": "187881cc675-ptyalkgnu169lh"
-      },
-      "187881cdad2-yibqcn12nbkck7": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Wassup",
-        "isCompleted": true,
-        "category": "Dog",
-        "_id": "187881cdad2-yibqcn12nbkck7"
-      },
-      "187881d56f5-f0udvw1g3fk9kk": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Woo :D",
-        "isCompleted": true,
-        "category": "",
-        "_id": "187881d56f5-f0udvw1g3fk9kk"
-      },
-      "187881dafbc-f40yozj5fo8j0e": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Why hello there",
-        "isCompleted": true,
-        "category": "",
-        "_id": "187881dafbc-f40yozj5fo8j0e"
-      },
-      "187881e8cc0-duie3znp0buhrx": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Why hello there",
-        "isCompleted": true,
-        "category": "Greetings",
-        "_id": "187881e8cc0-duie3znp0buhrx"
-      },
-      "1878833cf0c-2458hkaracbse8": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "fuck yeah",
-        "isCompleted": true,
-        "category": "",
-        "_id": "1878833cf0c-2458hkaracbse8"
-      },
-      "18788344466-yzdnp3do3ivkq3": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "something else",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18788344466-yzdnp3do3ivkq3"
-      },
-      "1878834e60a-anyebqu9y5wj2i": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "fuck",
-        "isCompleted": false,
-        "category": "",
-        "_id": "1878834e60a-anyebqu9y5wj2i"
-      },
-      "18788351ef2-zocpoa3ugfc59y": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "fuck",
-        "isCompleted": true,
-        "category": "asd",
-        "_id": "18788351ef2-zocpoa3ugfc59y"
-      },
-      "187883704a7-bph3xa930v4ta3": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Hungala Mungala",
-        "isCompleted": true,
-        "category": "",
-        "_id": "187883704a7-bph3xa930v4ta3"
-      },
-      "1878837213f-lnh2i2w9lfr6er": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Hungala Mungala",
-        "isCompleted": true,
-        "category": "Pongal",
-        "_id": "1878837213f-lnh2i2w9lfr6er"
-      },
-      "187883bc1c3-7z71t0azcp2vt7": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Pongalo",
-        "isCompleted": true,
-        "category": "",
-        "_id": "187883bc1c3-7z71t0azcp2vt7"
-      },
-      "187883bde33-usx04lo019b485": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Pongalo Pongal",
-        "category": "Pathram",
-        "_id": "187883bde33-usx04lo019b485"
-      },
-      "187883c53ae-5vvr8oklzvy5pt": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Pongalo",
-        "category": "Pathram",
-        "_id": "187883c53ae-5vvr8oklzvy5pt"
-      },
-      "1878843f45e-mk7wxa81ymk8rf": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Hungala Mungala",
-        "category": "Greeting",
-        "_id": "1878843f45e-mk7wxa81ymk8rf"
-      },
-      "187884477a6-gstabboj9vuoa8": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Hungala Mungala",
-        "category": "MungalaHungala",
-        "_id": "187884477a6-gstabboj9vuoa8"
-      },
-      "187884859bb-tsw8kug4u9tu70": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Cat to-do!",
-        "isCompleted": false,
-        "category": "",
-        "_id": "187884859bb-tsw8kug4u9tu70"
-      },
-      "18788487629-rqb6mq1qqudobk": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Cat to-do!",
-        "category": "Cat",
-        "_id": "18788487629-rqb6mq1qqudobk"
-      },
-      "187884c02a1-pdc0kqu0saj2oi": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Hello!",
-        "isCompleted": true,
-        "category": "",
-        "_id": "187884c02a1-pdc0kqu0saj2oi"
-      },
-      "187884c28f8-fyo8ifxnab8wgc": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Hello!",
-        "isCompleted": false,
-        "category": "",
-        "_id": "187884c28f8-fyo8ifxnab8wgc"
-      },
-      "187884e3676-u7l4kk49rq9qoq": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Hello",
-        "isCompleted": true,
-        "category": "",
-        "_id": "187884e3676-u7l4kk49rq9qoq"
-      },
-      "18788527876-08muf9ev793sc3": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Hello!",
+      "18788ac41f0-0my0zyzzr5pr0a": {
         "category": "Carrot",
-        "_id": "18788527876-08muf9ev793sc3"
+        "isCompleted": true,
+        "taskDescription": "Potato",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "18788ac41f0-0my0zyzzr5pr0a"
+      },
+      "18788ac7f06-vm5uwo2n4kok8s": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "taskDescription": "Watermelon",
+        "isCompleted": true,
+        "category": "Carrot",
+        "_id": "18788ac7f06-vm5uwo2n4kok8s"
+      },
+      "18788b50bfc-zen4uhkuquh8zm": {
+        "category": "ewr",
+        "isCompleted": true,
+        "taskDescription": "Watermelon",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "18788b50bfc-zen4uhkuquh8zm"
+      },
+      "18788b60c64-l8hcvt4nj5ss05": {
+        "category": "dfhjk",
+        "isCompleted": true,
+        "taskDescription": "Watermelon",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "18788b60c64-l8hcvt4nj5ss05"
+      },
+      "18788bad703-0rqqdt67dtmdql": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "taskDescription": "Pathram",
+        "isCompleted": true,
+        "category": "",
+        "_id": "18788bad703-0rqqdt67dtmdql"
+      },
+      "18788baef03-1drxq7rcuy1ovy": {
+        "category": "Carrot",
+        "isCompleted": true,
+        "taskDescription": "Pathram",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "18788baef03-1drxq7rcuy1ovy"
+      },
+      "18788bbff55-854hd8s6u9kw4p": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "taskDescription": "TonkaTruk",
+        "isCompleted": true,
+        "category": "",
+        "_id": "18788bbff55-854hd8s6u9kw4p"
+      },
+      "18788bc23da-heb0uky5ml2515": {
+        "category": "Carrot",
+        "isCompleted": true,
+        "taskDescription": "TonkaTruk",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "18788bc23da-heb0uky5ml2515"
+      },
+      "18788be12be-2zuw1fk1l8h2gv": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "taskDescription": "Stonks",
+        "isCompleted": true,
+        "category": "",
+        "_id": "18788be12be-2zuw1fk1l8h2gv"
+      },
+      "18788be2c03-dc2m790en5jrgy": {
+        "category": "Carrot",
+        "isCompleted": true,
+        "taskDescription": "Stonks",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "18788be2c03-dc2m790en5jrgy"
+      },
+      "18788c0afc0-ukaoc0ztkappq0": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "taskDescription": "Sandwich",
+        "isCompleted": true,
+        "category": "",
+        "_id": "18788c0afc0-ukaoc0ztkappq0"
+      },
+      "18788c0c7e8-9iwrhglt26hm8f": {
+        "category": "Carrot",
+        "isCompleted": true,
+        "taskDescription": "Sandwich",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "18788c0c7e8-9iwrhglt26hm8f"
+      },
+      "18788c3e95e-jdr5gy8osh9p0l": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "taskDescription": "Poooo",
+        "isCompleted": true,
+        "category": "Carrot",
+        "_id": "18788c3e95e-jdr5gy8osh9p0l"
+      },
+      "18788c3fb2c-emhtuvzkiadjlj": {
+        "category": "Carrot",
+        "isCompleted": true,
+        "taskDescription": "Poooo",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "18788c3fb2c-emhtuvzkiadjlj"
+      },
+      "18788c45cbd-11wbm3kfermb59": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "taskDescription": "Pla",
+        "isCompleted": true,
+        "category": "Carrot",
+        "_id": "18788c45cbd-11wbm3kfermb59"
+      },
+      "18788c47144-zxfzzw5rmxiyys": {
+        "category": "Carrot",
+        "isCompleted": true,
+        "taskDescription": "Pla",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "18788c47144-zxfzzw5rmxiyys"
+      },
+      "18788c572da-3umtvjr7oog8h9": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "taskDescription": "Wheeee",
+        "isCompleted": true,
+        "category": "",
+        "_id": "18788c572da-3umtvjr7oog8h9"
+      },
+      "18788c59dad-0nx78g6twxgr67": {
+        "category": "Carton",
+        "isCompleted": true,
+        "taskDescription": "Wheeee",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "18788c59dad-0nx78g6twxgr67"
+      },
+      "18788c6f1c7-pawh97r5ktyjm5": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "taskDescription": "Honk",
+        "isCompleted": true,
+        "category": "",
+        "_id": "18788c6f1c7-pawh97r5ktyjm5"
+      },
+      "18788c700a0-5mafn3z386e7dv": {
+        "category": "Bonk",
+        "isCompleted": true,
+        "taskDescription": "Honk",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "18788c700a0-5mafn3z386e7dv"
+      },
+      "18788c9787c-a1p9yfocdp5q7q": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "taskDescription": "Potato",
+        "isCompleted": true,
+        "category": "",
+        "_id": "18788c9787c-a1p9yfocdp5q7q"
+      },
+      "18788c9a9f9-d7jj16hrs55htv": {
+        "category": "Carrot",
+        "isCompleted": true,
+        "taskDescription": "Potato",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "18788c9a9f9-d7jj16hrs55htv"
+      },
+      "18788ca6ef3-so7w68cjbqfquy": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "taskDescription": "Snickers",
+        "isCompleted": true,
+        "category": "",
+        "_id": "18788ca6ef3-so7w68cjbqfquy"
+      },
+      "18788caa353-hbkpugs7suzw2i": {
+        "category": "Chocolate",
+        "isCompleted": true,
+        "taskDescription": "Snickers",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "18788caa353-hbkpugs7suzw2i"
+      },
+      "18788cc2634-f9t54dly1vdq35": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "taskDescription": "Mars",
+        "isCompleted": true,
+        "category": "",
+        "_id": "18788cc2634-f9t54dly1vdq35"
+      },
+      "18788cc4b70-2cpmxzqffpna2g": {
+        "category": "Chonk",
+        "isCompleted": true,
+        "taskDescription": "Mars",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "18788cc4b70-2cpmxzqffpna2g"
+      },
+      "18788cdad4c-fq539hdqlxav1r": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "taskDescription": "Fall",
+        "isCompleted": true,
+        "category": "",
+        "_id": "18788cdad4c-fq539hdqlxav1r"
+      },
+      "18788cddccb-i08a2dn5xmgrbv": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "taskDescription": "Fall",
+        "isCompleted": true,
+        "category": "Fall",
+        "_id": "18788cddccb-i08a2dn5xmgrbv"
+      },
+      "18788cf1d55-3dmqp86ngg2yu8": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "taskDescription": "Task",
+        "isCompleted": true,
+        "category": "",
+        "_id": "18788cf1d55-3dmqp86ngg2yu8"
+      },
+      "18788cf2bb5-viya23h679focd": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "taskDescription": "Task",
+        "isCompleted": true,
+        "category": "FSf",
+        "_id": "18788cf2bb5-viya23h679focd"
+      },
+      "18788d4c64e-68vgltsti12vqw": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "taskDescription": "Breer",
+        "isCompleted": true,
+        "category": "Carrot",
+        "_id": "18788d4c64e-68vgltsti12vqw"
       }
     }
   ],
   [
     "_dbmetadata",
     {}
-  ],
-  [
-    "categories",
-    {
-      "187882d43f8-xvc8wxbq43d2f4": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Wassup",
-        "isCompleted": true,
-        "category": "Cat",
-        "_id": "187882d43f8-xvc8wxbq43d2f4"
-      },
-      "187882d5683-8tm5g5j23qzw6x": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Wassup",
-        "isCompleted": true,
-        "category": "Dog",
-        "_id": "187882d5683-8tm5g5j23qzw6x"
-      }
-    }
   ]
 ]

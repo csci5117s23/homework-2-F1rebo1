@@ -48,6 +48,7 @@ export default function Todo(){
             setItems(res);
             setnewTodoItem("");
             setaddNewTask(true);
+            console.log("todos.js addOrCreate res: " + item);
         }
     }
 
@@ -58,14 +59,14 @@ export default function Todo(){
         const itemList = items.map((item) => (
             <li key={item._id}>
                 {item.taskDescription}<br></br>
-                <Link href={`/todo/${item._id}`}><button className="button is-info is-small">&#9998;</button></Link>
+                <Link href={`/todo/${item._id}`}><button className="button is-info is-small">Edit&#9998;</button></Link>
                 <Link href="/done"><button className="button is-warning is-small" 
                     onClick={async () => {
                         console.log("Mark this boi as done: " + item._id);
                         const token = await getToken({ template: "productivitycorner" });
                         await setComplete(token,userId,item._id);
                         setaddNewTask(true);
-                    }}>&#10024;&#10004;</button></Link>
+                    }}>&#10024;Done&#10004;</button></Link>
                     <br></br>
             </li>
             

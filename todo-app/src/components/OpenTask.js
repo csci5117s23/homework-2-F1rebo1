@@ -40,29 +40,32 @@ export default function OpenTask( {id} ){
         setAllowEdit(true);
     }
 
-    async function setAddCategory(){
+    function setAddCategory(){
+        console.log("setAddCategory reached");
         setCatAdded(true);
+        console.log("catAdded val is: " + catAdded);
     }
 
     async function addCategoryType(catName) {
         console.log("Do we make it here?")
         console.log(catValue);
+        console.log("addCategoryType catAdded value is: " + catAdded);
         console.log(userId);
         if(catAdded && catValue && userId) {
             var item = {
                 userId: userId,
                 taskDescription: openItem,
-                // isCompleted: false,
-                category: catName
+                isCompleted: false,
+                category: catName,
+                _id: id
             };
             const token = await getToken({ template: "productivitycorner" })
             await addCategory(token,item);
             const res = await getCategories(token,userId);
-            console.log("RESULT: " + res);
             setCatValue(res);
             setCatAdded(false);
             // console.log("Cat value: " + catValue);
-            console.log("This task id: " + id + " has the following category: " + catValue);
+            console.log("OpenTask.js addCategoryType res: " + item);
         }
     }
 
@@ -106,6 +109,7 @@ export default function OpenTask( {id} ){
                     <h4>{openItem}</h4><br></br>
                     <button className="button is-success" onClick={setToEdit}>Edit Task</button>
                     <button className="button is-link" onClick={setAddCategory}>Set Category</button>
+
                 </>
             );
         }

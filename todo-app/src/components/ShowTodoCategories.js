@@ -1,14 +1,19 @@
 import Sidebar from "@/components/sidebar";
 import { useState, useEffect } from "react";
 import { useAuth } from '@clerk/nextjs';
-import { getCategoryTodoList, editTodoItem } from "@/modules/Data.js";
+import { getCategoryTodoList, addTodo, getTodos, addCategory, getCategories } from "@/modules/Data.js";
 
-export default function ShowCategories( { category } ){
+export default function ShowTodoCategories( { category } ){
     
     const [items,setitems] = useState([]);
     // const [newTodoItem, setnewTodoItem] = useState("");
-    const [allowEdit,setAllowEdit] = useState(false);
     const { isLoaded, userId, getToken } = useAuth();
+    const [newTodoItem, setnewTodoItem] = useState("");
+    const [addNewTask, setaddNewTask] = useState(false);
+    const [addItems,setaddItems] = useState([]);
+
+    const [allowEdit,setAllowEdit] = useState(false);
+    const [openItem,setOpenItem] = useState("");
 
     useEffect(() => {
         async function process() {
@@ -29,6 +34,27 @@ export default function ShowCategories( { category } ){
         });
     }, [isLoaded,!allowEdit])
 
+    async function addOrCreate() {
+        if(newTodoItem && userId) {
+            var item = {
+                userId: userId,
+                taskDescription: newTodoItem,
+                isCompleted: false,
+                category: category
+            };
+            const token = await getToken({ template: "productivitycorner" })
+            await addTodo(token,item);
+            const res = await getTodos(token,userId);
+            // await setToDone(token,userId,todoItem._id);
+            // setAddingTodo(true);
+            setaddItems(res);
+            setnewTodoItem("");
+            setaddNewTask(true);
+            setAllowEdit(!allowEdit);
+            console.log("ShowTodoCategories.js addOrCreate res: " + item);
+        }
+    }
+
     if(!isLoaded){
         return <span> Loading {`:)`} </span>
     }else{
@@ -37,7 +63,20 @@ export default function ShowCategories( { category } ){
                 {item.taskDescription}<br></br>
             </li>
         ));
-        // console.log(itemList);
+        let openTaskContents;
+        openTaskContents = (
+            <>
+                <h4>{openItem}</h4><br></br>
+                <div className="flex-container">
+                    <ul>
+                        <textarea className="textarea is-primary" placeholder="Enter task description" value = {newTodoItem} rows="2"
+                            onChange={(e) => setnewTodoItem(e.target.value)}
+                            onKeyDown={(e) => { if(e.key === 'Enter'){addOrCreate()} }}></textarea>
+                        <button className="button is-primary" onClick = {addOrCreate}>Add task</button>
+                    </ul>
+                </div>
+            </>
+        );
         return (
             <>
                 <header className="head">
@@ -45,13 +84,14 @@ export default function ShowCategories( { category } ){
                 </header>
                 <Sidebar></Sidebar>
                 {itemList}
+                {openTaskContents}
                 {/* <div className="flex-container">
                     <ul>
                         <textarea className="textarea is-primary" placeholder="Enter task description" value = {newTodoItem} rows="2"
                             onChange={(e) => setnewTodoItem(e.target.value)}
                             onKeyDown={(e) => { if(e.key === 'Enter'){addOrCreate()} }}></textarea>
                         <button className="button is-primary" onClick = {addOrCreate}>Add task</button>
-                        {itemList}
+                        <button className="button is-link" onClick={setAddCategory}>Set Category</button>
                     </ul>
                 </div> */}
                 {/* <MakeItem></MakeItem> */}

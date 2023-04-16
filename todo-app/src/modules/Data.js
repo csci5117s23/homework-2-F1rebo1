@@ -47,7 +47,7 @@ export async function getTodoItem(authToken,userId,todoId) {
 
 export async function setComplete(authToken,userId,taskId) {
     let taskData = (await getTodoItem(authToken,userId,taskId))[0];
-    taskData.isCompleted = true;
+    taskData.isCompleted = !taskData.isCompleted;
     const result = fetch(`${backend_base}/updateTodoList?userId=${userId}&_id=${taskId}`, {
         'method': 'PUT',
         'headers': {
@@ -125,7 +125,7 @@ export async function getCategories(authToken,userId) {
 // }
 
 export async function getCategoryTodoList(authToken,userId,catName) {
-    const result = await fetch(backend_base+`/todos?category=${catName}`,{
+    const result = await fetch(backend_base+`/todos?category=${catName}&isCompleted=false`,{
         'method':'GET',
         'headers': {'Authorization': 'Bearer ' + authToken}
     })
@@ -133,7 +133,7 @@ export async function getCategoryTodoList(authToken,userId,catName) {
 }
 
 export async function getCategoryCompletedList(authToken,userId,catName) {
-    const result = await fetch(backend_base+`/todos/categories?userId=${userId}&isCompleted=true&category=${catName}`,{
+    const result = await fetch(backend_base+`/done?category=${catName}&isCompleted=true`,{
         'method':'GET',
         'headers': {'Authorization': 'Bearer ' + authToken}
     })

@@ -11,7 +11,7 @@ import jwtDecode from 'jwt-decode';
 const todoYup = object({
   userId: string().required(),
   taskDescription: string().required(),
-  isCompleted: boolean().optional(),
+  isCompleted: boolean().optional().default(false),
   category: string().optional()
 })
 
@@ -118,13 +118,16 @@ app.get('/todo/:id', function (req, res) {
 
 app.put('/updateTodoList', async (req, res) => {
   const db = await Datastore.open();
-  const data = await db.updateOne('todos',req.query._id,req.body);
+  const data = await db.replaceOne('todos',req.query._id,req.body);
+  // const data = await db.updateOne('todos',req.query._id,req.body);
+  console.log(data);
   res.json(data);
 });
 
-app.put('/todos/category', async (req, res) => {
+app.put('/todos/:category', async (req, res) => {
   const db = await Datastore.open();
-  const data = await db.updateOne('categories',req.query._id,req.body);
+  const data = await db.replaceOne('todos',req.query._id,req.body);
+  // const data = await db.updateOne('categories',req.query._id,req.body);
   res.json(data);
 });
 

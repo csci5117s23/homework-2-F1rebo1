@@ -1,5 +1,5 @@
 import Sidebar from "@/components/sidebar";
-import ShowCategories from "@/components/ShowCategories";
+import ShowTodoCategories from "@/components/ShowTodoCategories";
 import { useRouter } from "next/router";
 import { RedirectToSignIn, SignedIn, SignedOut, useAuth } from "@clerk/nextjs"
 
@@ -16,7 +16,7 @@ export default function ShowTask(){
         return (
             <>
                 <SignedIn>
-                    <ShowCategories category={category}></ShowCategories>
+                    <ShowTodoCategories category={category}></ShowTodoCategories>
                 </SignedIn>
                 <SignedOut>
                     <RedirectToSignIn />
