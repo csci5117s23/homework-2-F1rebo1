@@ -12,7 +12,8 @@ const todoYup = object({
   userId: string().required(),
   taskDescription: string().required(),
   isCompleted: boolean().optional().default(false),
-  category: string().optional()
+  category: string().optional(),
+  createdOn: date().default(() => new Date())
 })
 
 const categoryYup = object({
@@ -124,20 +125,28 @@ app.put('/updateTodoList', async (req, res) => {
   res.json(data);
 });
 
-app.put('/todos/:category', async (req, res) => {
+// app.put('/todos/:category', async (req, res) => {
+//   const db = await Datastore.open();
+//   const data = await db.replaceOne('todos',req.query._id,req.body);
+//   // const data = await db.updateOne('categories',req.query._id,req.body);
+//   res.json(data);
+// });
+
+// app.put('/done/:category', async (req, res) => {
+//   const db = await Datastore.open();
+//   const data = await db.updateOne('todos',req.query._id,req.body);
+//   // const data = await db.updateOne('categories',req.query._id,req.body);
+//   console.log(data);
+//   res.json(data);
+// });
+
+app.delete('/deleteCategory', async (req, res) => {
   const db = await Datastore.open();
-  const data = await db.replaceOne('todos',req.query._id,req.body);
-  // const data = await db.updateOne('categories',req.query._id,req.body);
+  const data = await db.removeOne('categories',req.query._id);
   res.json(data);
 });
 
-app.put('/done/:category', async (req, res) => {
-  const db = await Datastore.open();
-  const data = await db.updateOne('todos',req.query._id,req.body);
-  // const data = await db.updateOne('categories',req.query._id,req.body);
-  console.log(data);
-  res.json(data);
-});
+// app.delete('/')
 
 // Use Crudlify to create a REST API for any collection
 crudlify(app, {todos: todoYup, categories: categoryYup})

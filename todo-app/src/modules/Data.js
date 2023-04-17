@@ -93,36 +93,59 @@ export async function deleteTodo(authToken,todo) {
 }
 
 export async function addCategory(authToken,item) {
+    const result = await fetch(backend_base+`/categories?userId=${item.userId}`,{
+        'method':'POST',
+        'headers': {'Authorization': 'Bearer ' + authToken,
+        'Content-Type': 'application/json'},
+        'body': JSON.stringify({
+            userId: item.userId,
+            category: item.category
+        })
+    })
+    return await result.json();
+}
+
+export async function addCategoryToTodos(authToken,item) {
     const result = await fetch(backend_base+`/todos?userId=${item.userId}`,{
         'method':'POST',
         'headers': {'Authorization': 'Bearer ' + authToken,
         'Content-Type': 'application/json'},
-        'body': JSON.stringify(item)
+        'body': JSON.stringify({
+            userId: item.userId,
+            taskDescription: item.taskDescription,
+            isCompleted: item.isCompleted,
+            category: item.category,
+            _id: item._id
+        })
     })
     return await result.json();
 }
 
 export async function getCategories(authToken,userId) {
-    const result = await fetch(backend_base+`/todos?userId=${userId}`,{
+    const result = await fetch(backend_base+`/categories?userId=${userId}`,{
+        'method':'GET',
+        'headers': {'Authorization': 'Bearer ' + authToken}
+    })
+    console.log("Pongal");
+    console.log(result);
+    return result;
+}
+
+export async function getExistingTodoCategories(authToken,userId) {
+    const result = await fetch(backend_base+`/todos?userId=${userId}&isCompleted=false`,{
         'method':'GET',
         'headers': {'Authorization': 'Bearer ' + authToken}
     })
     return result;
 }
 
-// export async function setComplete(authToken,userId,taskId) {
-//     let taskData = (await getTodoItem(authToken,userId,taskId))[0];
-//     taskData.isCompleted = true;
-//     const result = fetch(`${backend_base}/updateTodoList?userId=${userId}&_id=${taskId}`, {
-//         'method': 'PUT',
-//         'headers': {
-//             'Authorization': 'Bearer ' + authToken,
-//             'Content-Type': 'application/json',
-//         },
-//         'body': JSON.stringify(taskData)
-//         });
-//     return result;
-// }
+export async function getExistingDoneCategories(authToken,userId) {
+    const result = await fetch(backend_base+`/todos?userId=${userId}&isCompleted=true`,{
+        'method':'GET',
+        'headers': {'Authorization': 'Bearer ' + authToken}
+    })
+    return result;
+}
 
 export async function getCategoryTodoList(authToken,userId,catName) {
     const result = await fetch(backend_base+`/todos?userId=${userId}&category=${catName}&isCompleted=false`,{

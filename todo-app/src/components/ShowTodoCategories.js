@@ -1,17 +1,17 @@
 import Sidebar from "@/components/sidebar";
 import { useState, useEffect } from "react";
 import { useAuth } from '@clerk/nextjs';
-import { getCategoryTodoList, addTodo, getTodos } from "@/modules/Data.js";
+import { getCategoryTodoList, getExistingTodoCategories, addTodo, getTodos } from "@/modules/Data.js";
+import { useRouter } from "next/router";
 
 export default function ShowTodoCategories( { category } ){
     
     const [items,setitems] = useState([]);
-    // const [newTodoItem, setnewTodoItem] = useState("");
     const { isLoaded, userId, getToken } = useAuth();
     const [newTodoItem, setnewTodoItem] = useState("");
     const [addNewTask, setaddNewTask] = useState(false);
     const [addItems,setaddItems] = useState([]);
-
+    const router = useRouter();
     const [allowEdit,setAllowEdit] = useState(false);
     const [openItem,setOpenItem] = useState("");
 
@@ -21,6 +21,8 @@ export default function ShowTodoCategories( { category } ){
                 try {
                     const token = await getToken({ template: "productivitycorner" });
                     const res = await getCategoryTodoList(token,userId,category)    //Get a list of all todo items from a certain category
+                    const cats = (getExistingTodoCategories(token,userId)).then((res) => {return res.json()}).then((cats) => { if(cats.map((cat) => (cat.category)).indexOf(category) == -1) router.push('/404')});
+                    console.log("CATEGORIES: " + cats);
                     return res;
                 }catch (error) {
                     console.error('Failed to show tasks in this category', error);
@@ -29,10 +31,10 @@ export default function ShowTodoCategories( { category } ){
             }
         }
         process().then((res) => {
-            console.log(res);
+            // console.log(res);
             setitems(res);
         }).catch(() => {
-            router.push('/todos');
+            router.push('/404');
         });
     }, [isLoaded,!allowEdit])
 

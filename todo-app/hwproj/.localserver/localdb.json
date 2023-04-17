@@ -2,353 +2,218 @@
   [
     "todos",
     {
-      "18788ac1ea5-ftf9q4notjs6mo": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Potato",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18788ac1ea5-ftf9q4notjs6mo"
-      },
-      "18788ac41f0-0my0zyzzr5pr0a": {
-        "category": "Carrot",
-        "isCompleted": true,
-        "taskDescription": "Potato",
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "18788ac41f0-0my0zyzzr5pr0a"
-      },
-      "18788ac7f06-vm5uwo2n4kok8s": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Watermelon",
-        "isCompleted": true,
-        "category": "Carrot",
-        "_id": "18788ac7f06-vm5uwo2n4kok8s"
-      },
-      "18788b50bfc-zen4uhkuquh8zm": {
-        "category": "ewr",
-        "isCompleted": true,
-        "taskDescription": "Watermelon",
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "18788b50bfc-zen4uhkuquh8zm"
-      },
-      "18788b60c64-l8hcvt4nj5ss05": {
-        "category": "dfhjk",
-        "isCompleted": true,
-        "taskDescription": "Watermelon",
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "18788b60c64-l8hcvt4nj5ss05"
-      },
-      "18788bad703-0rqqdt67dtmdql": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Pathram",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18788bad703-0rqqdt67dtmdql"
-      },
-      "18788baef03-1drxq7rcuy1ovy": {
-        "category": "Carrot",
-        "isCompleted": true,
-        "taskDescription": "Pathram",
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "18788baef03-1drxq7rcuy1ovy"
-      },
-      "18788bbff55-854hd8s6u9kw4p": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "TonkaTruk",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18788bbff55-854hd8s6u9kw4p"
-      },
-      "18788bc23da-heb0uky5ml2515": {
-        "category": "Carrot",
-        "isCompleted": true,
-        "taskDescription": "TonkaTruk",
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "18788bc23da-heb0uky5ml2515"
-      },
-      "18788be12be-2zuw1fk1l8h2gv": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Stonks",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18788be12be-2zuw1fk1l8h2gv"
-      },
-      "18788be2c03-dc2m790en5jrgy": {
-        "category": "Carrot",
-        "isCompleted": true,
-        "taskDescription": "Stonks",
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "18788be2c03-dc2m790en5jrgy"
-      },
-      "18788c0afc0-ukaoc0ztkappq0": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Sandwich",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18788c0afc0-ukaoc0ztkappq0"
-      },
-      "18788c0c7e8-9iwrhglt26hm8f": {
-        "category": "Carrot",
-        "isCompleted": true,
-        "taskDescription": "Sandwich",
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "18788c0c7e8-9iwrhglt26hm8f"
-      },
-      "18788c3e95e-jdr5gy8osh9p0l": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Poooo",
-        "isCompleted": true,
-        "category": "Carrot",
-        "_id": "18788c3e95e-jdr5gy8osh9p0l"
-      },
-      "18788c3fb2c-emhtuvzkiadjlj": {
-        "category": "Carrot",
-        "isCompleted": true,
-        "taskDescription": "Poooo",
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "18788c3fb2c-emhtuvzkiadjlj"
-      },
-      "18788c45cbd-11wbm3kfermb59": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Pla",
-        "isCompleted": true,
-        "category": "Carrot",
-        "_id": "18788c45cbd-11wbm3kfermb59"
-      },
-      "18788c47144-zxfzzw5rmxiyys": {
-        "category": "Carrot",
-        "isCompleted": true,
-        "taskDescription": "Pla",
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "18788c47144-zxfzzw5rmxiyys"
-      },
-      "18788c572da-3umtvjr7oog8h9": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Wheeee",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18788c572da-3umtvjr7oog8h9"
-      },
-      "18788c59dad-0nx78g6twxgr67": {
-        "category": "Carton",
-        "isCompleted": true,
-        "taskDescription": "Wheeee",
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "18788c59dad-0nx78g6twxgr67"
-      },
-      "18788c6f1c7-pawh97r5ktyjm5": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Honk",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18788c6f1c7-pawh97r5ktyjm5"
-      },
-      "18788c700a0-5mafn3z386e7dv": {
-        "category": "Bonk",
-        "isCompleted": true,
-        "taskDescription": "Honk",
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "18788c700a0-5mafn3z386e7dv"
-      },
-      "18788c9787c-a1p9yfocdp5q7q": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Potato",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18788c9787c-a1p9yfocdp5q7q"
-      },
-      "18788c9a9f9-d7jj16hrs55htv": {
-        "category": "Carrot",
-        "isCompleted": true,
-        "taskDescription": "Potato",
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "18788c9a9f9-d7jj16hrs55htv"
-      },
-      "18788ca6ef3-so7w68cjbqfquy": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Snickers",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18788ca6ef3-so7w68cjbqfquy"
-      },
-      "18788caa353-hbkpugs7suzw2i": {
-        "category": "Chocolate",
-        "isCompleted": true,
-        "taskDescription": "Snickers",
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "18788caa353-hbkpugs7suzw2i"
-      },
-      "18788cc2634-f9t54dly1vdq35": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Mars",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18788cc2634-f9t54dly1vdq35"
-      },
-      "18788cc4b70-2cpmxzqffpna2g": {
-        "category": "Chonk",
-        "isCompleted": true,
-        "taskDescription": "Mars",
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "18788cc4b70-2cpmxzqffpna2g"
-      },
-      "18788cdad4c-fq539hdqlxav1r": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Fall",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18788cdad4c-fq539hdqlxav1r"
-      },
-      "18788cddccb-i08a2dn5xmgrbv": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Fall",
-        "isCompleted": true,
-        "category": "Fall",
-        "_id": "18788cddccb-i08a2dn5xmgrbv"
-      },
-      "18788cf1d55-3dmqp86ngg2yu8": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Task",
-        "isCompleted": true,
-        "category": "",
-        "_id": "18788cf1d55-3dmqp86ngg2yu8"
-      },
-      "18788cf2bb5-viya23h679focd": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Task",
-        "isCompleted": true,
-        "category": "FSf",
-        "_id": "18788cf2bb5-viya23h679focd"
-      },
-      "18788d4c64e-68vgltsti12vqw": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Breer",
-        "isCompleted": true,
-        "category": "Carrot",
-        "_id": "18788d4c64e-68vgltsti12vqw"
-      },
-      "18788e7404e-svn11hdmitusj4": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Potato",
-        "isCompleted": true,
-        "category": "Potato",
-        "_id": "18788e7404e-svn11hdmitusj4"
-      },
-      "18788e78d26-koluwlfz4rr918": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Sweet Potato",
-        "isCompleted": true,
-        "category": "SweetPotato",
-        "_id": "18788e78d26-koluwlfz4rr918"
-      },
-      "18788fecde8-7y2njps3tedjp7": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Pongal",
-        "isCompleted": true,
-        "category": "Pongal",
-        "_id": "18788fecde8-7y2njps3tedjp7"
-      },
-      "1878908d8c5-wl9khoipx4ls9b": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Haha",
-        "isCompleted": true,
-        "category": "Funny",
-        "_id": "1878908d8c5-wl9khoipx4ls9b"
-      },
-      "187890a9c5e-ywcve5hzwspne6": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Wah",
-        "isCompleted": true,
-        "category": "Wah",
-        "_id": "187890a9c5e-ywcve5hzwspne6"
-      },
-      "187890acfc3-kymrx6buiqaxlq": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "What",
-        "isCompleted": true,
-        "category": "Wah",
-        "_id": "187890acfc3-kymrx6buiqaxlq"
-      },
-      "187890c3667-gfs74obwq4vxoh": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Bread",
-        "isCompleted": true,
-        "category": "Bread",
-        "_id": "187890c3667-gfs74obwq4vxoh"
-      },
-      "187890c5865-7gzteu7936fozp": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "France",
-        "isCompleted": true,
-        "category": "Bread",
-        "_id": "187890c5865-7gzteu7936fozp"
-      },
-      "18789108bf4-d0554tasjrr2px": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Food",
-        "isCompleted": true,
-        "category": "Food",
-        "_id": "18789108bf4-d0554tasjrr2px"
-      },
-      "1878914018d-i936yv3wjp89sf": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+      "1878cc770f8-76pixhndi7g2d2": {
+        "createdOn": "2023-04-17T01:27:31.296Z",
+        "category": "Hehe",
+        "isCompleted": false,
         "taskDescription": "Hello",
-        "isCompleted": true,
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "1878cc770f8-76pixhndi7g2d2"
+      },
+      "1878cc9ce50-yzjh3zdu633jfq": {
+        "createdOn": "2023-04-17T01:17:35.628Z",
         "category": "Greeting",
-        "_id": "1878914018d-i936yv3wjp89sf"
-      },
-      "1878914e8b8-8yotykdr0wy5qx": {
+        "isCompleted": false,
+        "taskDescription": "Hi",
         "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Hello",
-        "isCompleted": true,
-        "category": "Greeting",
-        "_id": "1878914e8b8-8yotykdr0wy5qx"
+        "_id": "1878cc9ce50-yzjh3zdu633jfq"
       },
-      "1878915fff7-4gcrejr9ii0qqn": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Food",
+      "1878cccac5c-yssgfqmuu31djb": {
+        "createdOn": "2023-04-17T01:20:59.412Z",
+        "category": "Fish",
         "isCompleted": true,
+        "taskDescription": "Salmon",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "1878cccac5c-yssgfqmuu31djb"
+      },
+      "1878cce3f9c-armrvria5r814o": {
+        "createdOn": "2023-04-17T01:22:19.676Z",
+        "category": "",
+        "isCompleted": false,
+        "taskDescription": "Hisf",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "1878cce3f9c-armrvria5r814o"
+      },
+      "1878cd8853b-dc9v95a8do6g0j": {
+        "createdOn": "2023-04-17T01:33:32.859Z",
+        "category": "",
+        "isCompleted": false,
+        "taskDescription": "Her",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "1878cd8853b-dc9v95a8do6g0j"
+      },
+      "1878cd8cf68-z9pphiqknro847": {
+        "createdOn": "2023-04-17T01:33:51.848Z",
+        "category": "",
+        "isCompleted": false,
+        "taskDescription": "AF",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "1878cd8cf68-z9pphiqknro847"
+      },
+      "1878ce3b444-bkn42579u06wxj": {
+        "createdOn": "2023-04-17T01:45:53.871Z",
         "category": "Food",
-        "_id": "1878915fff7-4gcrejr9ii0qqn"
-      },
-      "1878919df8c-l49wbvcbvrzcfe": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "isCompleted": false,
         "taskDescription": "Food",
-        "isCompleted": true,
-        "category": "Food",
-        "_id": "1878919df8c-l49wbvcbvrzcfe"
-      },
-      "187891b4d5c-k8q4elji1t6uow": {
         "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Food",
-        "isCompleted": true,
-        "category": "Carrot",
-        "_id": "187891b4d5c-k8q4elji1t6uow"
+        "_id": "1878ce3b444-bkn42579u06wxj"
       },
-      "187891b80ad-6e5al3ka6fncyg": {
+      "1878ce62a0a-j74puwmhszb59n": {
+        "createdOn": "2023-04-17T01:48:27.018Z",
+        "category": "",
+        "isCompleted": false,
+        "taskDescription": "Wat",
         "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Carrot",
-        "isCompleted": true,
-        "category": "Carrot",
-        "_id": "187891b80ad-6e5al3ka6fncyg"
+        "_id": "1878ce62a0a-j74puwmhszb59n"
       },
-      "187891d934e-ofxl9t9nfgoxc0": {
+      "1878ce6aaee-oepzcm15vkb3xv": {
+        "createdOn": "2023-04-17T01:49:07.946Z",
+        "category": "Chicken",
+        "isCompleted": false,
+        "taskDescription": "Salmonella",
         "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Jeep",
-        "isCompleted": true,
-        "category": "Car",
-        "_id": "187891d934e-ofxl9t9nfgoxc0"
+        "_id": "1878ce6aaee-oepzcm15vkb3xv"
       },
-      "187891df14f-0k63mszn39s9lx": {
+      "1878ceb983c-mgol8ko5k4lk56": {
+        "createdOn": "2023-04-17T01:54:29.718Z",
+        "category": "Chicken",
+        "isCompleted": false,
+        "taskDescription": "Chinken",
         "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "taskDescription": "Merc",
-        "isCompleted": true,
-        "category": "Merc",
-        "_id": "187891df14f-0k63mszn39s9lx"
+        "_id": "1878ceb983c-mgol8ko5k4lk56"
+      },
+      "1878ced1850-orgr7y789u9v8d": {
+        "createdOn": "2023-04-17T01:56:01.232Z",
+        "category": "Chicken",
+        "isCompleted": false,
+        "taskDescription": "Egg",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "1878ced1850-orgr7y789u9v8d"
       }
     }
   ],
   [
     "_dbmetadata",
     {}
+  ],
+  [
+    "categories",
+    {
+      "1878cc78baf-q6rd13defcqs14": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Greeting",
+        "_id": "1878cc78baf-q6rd13defcqs14"
+      },
+      "1878cc7c0db-44bzs0krz7ru0r": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Greeting",
+        "_id": "1878cc7c0db-44bzs0krz7ru0r"
+      },
+      "1878cc8f37d-4e8eslgxpqm6ot": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Hello",
+        "_id": "1878cc8f37d-4e8eslgxpqm6ot"
+      },
+      "1878cc91395-cohufkb3k8fmwy": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Cat",
+        "_id": "1878cc91395-cohufkb3k8fmwy"
+      },
+      "1878cc9ea11-mjuxa39ahzjaxd": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Greeting",
+        "_id": "1878cc9ea11-mjuxa39ahzjaxd"
+      },
+      "1878cccce16-g18gog5ia1v18c": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Fish",
+        "_id": "1878cccce16-g18gog5ia1v18c"
+      },
+      "1878ccd0618-61uuifoy5ncmkb": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Fish",
+        "_id": "1878ccd0618-61uuifoy5ncmkb"
+      },
+      "1878cd300e5-snbdxw1t1ytco2": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Hehe",
+        "_id": "1878cd300e5-snbdxw1t1ytco2"
+      },
+      "1878cd31508-vxl3vdp2yd0l7j": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Heeh",
+        "_id": "1878cd31508-vxl3vdp2yd0l7j"
+      },
+      "1878cd3a71a-1k8urqx5isbvuy": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "fa",
+        "_id": "1878cd3a71a-1k8urqx5isbvuy"
+      },
+      "1878cd3e75f-17s4xjwtft6cwz": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Affa",
+        "_id": "1878cd3e75f-17s4xjwtft6cwz"
+      },
+      "1878cd4af8a-8v326ic4j25vxc": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Afafa",
+        "_id": "1878cd4af8a-8v326ic4j25vxc"
+      },
+      "1878cd9702f-9w16nm5plvqjmh": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Heheyee",
+        "_id": "1878cd9702f-9w16nm5plvqjmh"
+      },
+      "1878ce31529-if75p6b77re4df": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "FG",
+        "_id": "1878ce31529-if75p6b77re4df"
+      },
+      "1878ce3d3d2-zjhxcyl5zwzp0c": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Food",
+        "_id": "1878ce3d3d2-zjhxcyl5zwzp0c"
+      },
+      "1878ce3e61a-t6r7b727kzkmb3": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Faf",
+        "_id": "1878ce3e61a-t6r7b727kzkmb3"
+      },
+      "1878ce5dc7e-3y08ycef9yrl59": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Wat",
+        "_id": "1878ce5dc7e-3y08ycef9yrl59"
+      },
+      "1878ce6c9ed-sbxdaylxcdn43q": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Chicken",
+        "_id": "1878ce6c9ed-sbxdaylxcdn43q"
+      },
+      "1878ce6e1c7-r9r2p4gm380x7r": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "XA",
+        "_id": "1878ce6e1c7-r9r2p4gm380x7r"
+      },
+      "1878ceb0301-noptdllj6fvg9l": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Feet",
+        "_id": "1878ceb0301-noptdllj6fvg9l"
+      },
+      "1878cebb2d9-6r8v2vvqeu9kd5": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Chicken",
+        "_id": "1878cebb2d9-6r8v2vvqeu9kd5"
+      },
+      "1878cebe781-1vw2jgvswe94jm": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Fefe",
+        "_id": "1878cebe781-1vw2jgvswe94jm"
+      },
+      "1878ced36b5-7j8h4sry8vtl23": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Waa",
+        "_id": "1878ced36b5-7j8h4sry8vtl23"
+      }
+    }
   ]
 ]

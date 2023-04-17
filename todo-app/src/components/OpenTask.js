@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useAuth } from '@clerk/nextjs';
-import { getTodoItem, editTodoItem, addCategory, getCategories } from "@/modules/Data.js";
+import { getTodoItem, editTodoItem, addCategory, getCategories, addCategoryToTodos } from "@/modules/Data.js";
 import { useRouter } from "next/router";
 
 export default function OpenTask( {id} ){
@@ -28,7 +28,7 @@ export default function OpenTask( {id} ){
         process().then((res) => {
             setOpenItem(res.taskDescription);
         }).catch(() => {
-            router.push('/todos');
+            router.push('/404');
         });
     }, [isLoaded,!allowEdit])
 
@@ -64,9 +64,13 @@ export default function OpenTask( {id} ){
                 _id: id
             };
             const token = await getToken({ template: "productivitycorner" })
+            console.log("OpenTask.js addCategoryType No complaints yet");
+            await addCategoryToTodos(token,item);
             await addCategory(token,item);
+            console.log("OpenTask.js addCategoryType Are you complaining?");
             const res = await getCategories(token,userId);
-            setCatValue(res);
+            setCatValue(await res.json());
+            console.log("catValue: " + catValue);
             setCatAdded(false);
             // console.log("Cat value: " + catValue);
             console.log("OpenTask.js addCategoryType res: " + item);
@@ -113,7 +117,6 @@ export default function OpenTask( {id} ){
                     <h4>{openItem}</h4><br></br>
                     <button className="button is-success" onClick={setToEdit}>Edit Task</button>
                     <button className="button is-link" onClick={setAddCategory}>Set Category</button>
-
                 </>
             );
         }

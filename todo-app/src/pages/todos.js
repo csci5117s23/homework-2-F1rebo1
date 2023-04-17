@@ -1,8 +1,7 @@
 import Sidebar from "@/components/sidebar";
-import Modal from 'react-modal';
+import { RedirectToSignIn, SignedIn, SignedOut, useAuth } from "@clerk/nextjs"
 import { useState, useEffect } from "react";
-import { useAuth } from "@clerk/nextjs";
-import { getTodos, addTodo, setComplete } from "@/modules/Data.js";
+import { getTodos, addTodo, setComplete, addCategory, getCategoriesFromCatYup, getCategories } from "@/modules/Data.js";
 import Link from 'next/link';
 
 export default function Todo(){
@@ -10,6 +9,9 @@ export default function Todo(){
     const [items,setItems] = useState([]);
     const [newTodoItem, setnewTodoItem] = useState("");
     const [addNewTask, setaddNewTask] = useState(false);
+    const [addCategoryGroup,setAddCategoryGroup] = useState(false);
+    const [addedCategoryName,setAddedCategoryName] = useState("");
+    const [categoriesAdded,setcategoriesAdded] = useState([]);
 
     useEffect(() => {
         async function process() {
@@ -29,8 +31,28 @@ export default function Todo(){
         process().then((res) => {
             // console.log(res);
             setItems(res);
+        }).catch(() => {
+            router.push('/404');
         });
     }, [isLoaded])
+
+    useEffect(() => {
+        async function showCategories() {
+            if(userId) {
+                const token = await getToken({ template: "productivitycorner" })
+                const res = await getCategories(token,userId);
+                const data = await res.json();
+                return data;
+            }
+        }
+        showCategories().then((data) => {
+            setcategoriesAdded(data?.map((x) => x.category));
+            // console.log(res);
+            // console.log("I am here 3: ");
+            // console.log(categories);
+            setAddCategoryGroup(false);
+        })
+    }, [isLoaded,addCategoryGroup])
     
     async function addOrCreate() {
         if(newTodoItem && userId) {
@@ -41,53 +63,114 @@ export default function Todo(){
                 category: ""
             };
             const token = await getToken({ template: "productivitycorner" })
+            console.log("todos.js addOrCreate No complaints yet");
             await addTodo(token,item);
+            const cats = await getCategories(token,userId);
+            console.log("Trying to Log categories: ");
+            const data = await cats.json();
+            console.log(data);
+            setcategoriesAdded(data.map((x) => x.category))
+            console.log("todos.js addOrCreate Are you complaining?");
             const res = await getTodos(token,userId);
             // await setToDone(token,userId,todoItem._id);
             // setAddingTodo(true);
             setItems(res);
             setnewTodoItem("");
             setaddNewTask(true);
+            console.log(categoriesAdded);
             console.log("todos.js addOrCreate res: " + item);
+        }
+    }
+
+    function addNewCat(){
+        setAddCategoryGroup(true);
+    }
+
+    async function addOrCreateCategory(categoryDetails) {
+        console.log("todos.js addOrCreateCategory Start");
+        if(categoryDetails && userId) {
+            var item = {
+                userId: userId,
+                category: categoryDetails
+            };
+            const token = await getToken({ template: "productivitycorner" })
+            await addCategory(token,item);
+            const cats = await getCategories(token,userId);
+            const data = await cats.json();
+            setcategoriesAdded(data.map((x) => x.category))
+            setAddCategoryGroup(false);
+            // console.log("todos.js addOrCreateCategory res: " + item);
         }
     }
 
     if(!isLoaded){
         return <span> Loading {`:)`} </span>
     }else{
-        // items.map((item) => console.log(<li key={item._id}></li>));
-        const itemList = items.map((item) => (
-            <li key={item._id}>
-                {item.taskDescription}<br></br>
-                <Link href={`/todo/${item._id}`}><button className="button is-info is-small">Edit&#9998;</button></Link>
-                <Link href="/done"><button className="button is-warning is-small" 
-                    onClick={async () => {
-                        console.log("Mark this boi as done: " + item._id);
-                        const token = await getToken({ template: "productivitycorner" });
-                        await setComplete(token,userId,item._id);
-                        setaddNewTask(true);
-                    }}>&#10024;Done&#10004;</button></Link>
-                    <br></br>
-            </li>
-            
-        ));
-        // console.log(itemList);
+        let openTaskContents;
+        if(addCategoryGroup){
+            openTaskContents = (
+                <>
+                    <div>
+                        <textarea
+                            className="textarea is-primary"
+                            placeholder="Add a new category group"
+                            onChange={(e) => setAddedCategoryName(e.target.value)}
+                            rows="2"
+                        ></textarea>
+                        <button className="button is-success" onClick={() => {addOrCreateCategory(addedCategoryName)}}>Add Category</button>
+                    </div>
+                </>
+            );
+        }else{
+            openTaskContents = (<>
+            <textarea className="textarea is-primary" placeholder="Enter task description" value = {newTodoItem} rows="2"
+                onChange={(e) => setnewTodoItem(e.target.value)}
+                onKeyDown={(e) => { if(e.key === 'Enter'){addOrCreate()} }}></textarea>
+            <div><button className="button is-primary" onClick = {addOrCreate}>Add task</button></div>
+            <div><button className="button is-link" onClick = {addNewCat}>Create New Category</button></div><br></br>
+            {items.map((item) => (
+                <li key={item._id}>
+                    {item.taskDescription}<br></br>
+                    <Link href={`/todo/${item._id}`}><button className="button is-info is-small">Edit&#9998;</button></Link>
+                    <Link href="/done"><button className="button is-warning is-small" 
+                        onClick={async () => {
+                            console.log("Mark this boi as done: " + item._id);
+                            const token = await getToken({ template: "productivitycorner" });
+                            await setComplete(token,userId,item._id);
+                            setaddNewTask(true);
+                        }}>&#10024;Done&#10004;</button></Link>
+                        <br></br>
+                </li>
+            ))}
+            <br></br>
+            <h3>
+                Categories added:
+            </h3><br></br>
+            <div>
+                {categoriesAdded?.map((cat) => {
+                    return <div><Link href={`/todos/${cat}`}><button className="button is-primary">{cat}</button></Link></div>
+                })}
+            </div>
+
+            </>)
+            // console.log(itemList);
+        }
         return (
             <>
-                <header className="head">
-                    <h1>Todo</h1>
-                </header>
-                <Sidebar></Sidebar>
-                <div className="flex-container">
-                    <ul>
-                        <textarea className="textarea is-primary" placeholder="Enter task description" value = {newTodoItem} rows="2"
-                            onChange={(e) => setnewTodoItem(e.target.value)}
-                            onKeyDown={(e) => { if(e.key === 'Enter'){addOrCreate()} }}></textarea>
-                        <button className="button is-primary" onClick = {addOrCreate}>Add task</button>
-                        {itemList}
-                    </ul>
-                </div>
-                {/* <MakeItem></MakeItem> */}
+                <SignedIn>
+                    <header className="head">
+                        <h1>Todo</h1>
+                    </header>
+                    <Sidebar></Sidebar>
+                    <div className="flex-container">
+                        <ul>
+                            {openTaskContents}
+                        </ul>
+                    </div>
+                </SignedIn>
+                <SignedOut>
+                    <RedirectToSignIn />
+                </SignedOut>
             </>
         );
     }
