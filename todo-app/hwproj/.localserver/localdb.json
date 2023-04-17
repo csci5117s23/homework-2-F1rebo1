@@ -2,218 +2,59 @@
   [
     "todos",
     {
-      "1878cc770f8-76pixhndi7g2d2": {
-        "createdOn": "2023-04-17T01:27:31.296Z",
-        "category": "Hehe",
+      "1878db9530c-z6zhhvlhunwoqt": {
+        "createdOn": "2023-04-17T05:41:30.199Z",
+        "category": "Pongal",
         "isCompleted": false,
-        "taskDescription": "Hello",
+        "taskDescription": "Breakfast",
         "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "1878cc770f8-76pixhndi7g2d2"
+        "_id": "1878db9530c-z6zhhvlhunwoqt"
       },
-      "1878cc9ce50-yzjh3zdu633jfq": {
-        "createdOn": "2023-04-17T01:17:35.628Z",
-        "category": "Greeting",
+      "1878dbde743-upqkkm0l20d2bs": {
+        "createdOn": "2023-04-17T08:44:19.900Z",
+        "category": "Pastaman",
         "isCompleted": false,
-        "taskDescription": "Hi",
+        "taskDescription": "Pasta",
         "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "1878cc9ce50-yzjh3zdu633jfq"
+        "_id": "1878dbde743-upqkkm0l20d2bs"
       },
-      "1878cccac5c-yssgfqmuu31djb": {
-        "createdOn": "2023-04-17T01:20:59.412Z",
-        "category": "Fish",
-        "isCompleted": true,
-        "taskDescription": "Salmon",
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "1878cccac5c-yssgfqmuu31djb"
-      },
-      "1878cce3f9c-armrvria5r814o": {
-        "createdOn": "2023-04-17T01:22:19.676Z",
-        "category": "",
+      "1878dd061ca-5eovltoahvla4q": {
+        "createdOn": "2023-04-17T06:04:23.953Z",
+        "category": "Hot",
         "isCompleted": false,
-        "taskDescription": "Hisf",
+        "taskDescription": "Heat",
         "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "1878cce3f9c-armrvria5r814o"
-      },
-      "1878cd8853b-dc9v95a8do6g0j": {
-        "createdOn": "2023-04-17T01:33:32.859Z",
-        "category": "",
-        "isCompleted": false,
-        "taskDescription": "Her",
+        "_id": "1878dd061ca-5eovltoahvla4q"
+      }
+    }
+  ],
+  [
+    "categories",
+    {
+      "1878dba7772-odxp5ppmcuij0k": {
         "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "1878cd8853b-dc9v95a8do6g0j"
-      },
-      "1878cd8cf68-z9pphiqknro847": {
-        "createdOn": "2023-04-17T01:33:51.848Z",
-        "category": "",
-        "isCompleted": false,
-        "taskDescription": "AF",
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "1878cd8cf68-z9pphiqknro847"
-      },
-      "1878ce3b444-bkn42579u06wxj": {
-        "createdOn": "2023-04-17T01:45:53.871Z",
         "category": "Food",
-        "isCompleted": false,
-        "taskDescription": "Food",
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "1878ce3b444-bkn42579u06wxj"
+        "_id": "1878dba7772-odxp5ppmcuij0k"
       },
-      "1878ce62a0a-j74puwmhszb59n": {
-        "createdOn": "2023-04-17T01:48:27.018Z",
-        "category": "",
-        "isCompleted": false,
-        "taskDescription": "Wat",
+      "1878dbace5f-h49wobetp63uxa": {
         "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "1878ce62a0a-j74puwmhszb59n"
+        "category": "Hot",
+        "_id": "1878dbace5f-h49wobetp63uxa"
       },
-      "1878ce6aaee-oepzcm15vkb3xv": {
-        "createdOn": "2023-04-17T01:49:07.946Z",
-        "category": "Chicken",
-        "isCompleted": false,
-        "taskDescription": "Salmonella",
+      "1878dbb87e3-jk5j5h1dtvvha8": {
         "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "1878ce6aaee-oepzcm15vkb3xv"
+        "category": "Pongal",
+        "_id": "1878dbb87e3-jk5j5h1dtvvha8"
       },
-      "1878ceb983c-mgol8ko5k4lk56": {
-        "createdOn": "2023-04-17T01:54:29.718Z",
-        "category": "Chicken",
-        "isCompleted": false,
-        "taskDescription": "Chinken",
+      "1878e62ea50-7a4bkob04gfdp3": {
         "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "1878ceb983c-mgol8ko5k4lk56"
-      },
-      "1878ced1850-orgr7y789u9v8d": {
-        "createdOn": "2023-04-17T01:56:01.232Z",
-        "category": "Chicken",
-        "isCompleted": false,
-        "taskDescription": "Egg",
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "_id": "1878ced1850-orgr7y789u9v8d"
+        "category": "Pastaman",
+        "_id": "1878e62ea50-7a4bkob04gfdp3"
       }
     }
   ],
   [
     "_dbmetadata",
     {}
-  ],
-  [
-    "categories",
-    {
-      "1878cc78baf-q6rd13defcqs14": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "Greeting",
-        "_id": "1878cc78baf-q6rd13defcqs14"
-      },
-      "1878cc7c0db-44bzs0krz7ru0r": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "Greeting",
-        "_id": "1878cc7c0db-44bzs0krz7ru0r"
-      },
-      "1878cc8f37d-4e8eslgxpqm6ot": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "Hello",
-        "_id": "1878cc8f37d-4e8eslgxpqm6ot"
-      },
-      "1878cc91395-cohufkb3k8fmwy": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "Cat",
-        "_id": "1878cc91395-cohufkb3k8fmwy"
-      },
-      "1878cc9ea11-mjuxa39ahzjaxd": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "Greeting",
-        "_id": "1878cc9ea11-mjuxa39ahzjaxd"
-      },
-      "1878cccce16-g18gog5ia1v18c": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "Fish",
-        "_id": "1878cccce16-g18gog5ia1v18c"
-      },
-      "1878ccd0618-61uuifoy5ncmkb": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "Fish",
-        "_id": "1878ccd0618-61uuifoy5ncmkb"
-      },
-      "1878cd300e5-snbdxw1t1ytco2": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "Hehe",
-        "_id": "1878cd300e5-snbdxw1t1ytco2"
-      },
-      "1878cd31508-vxl3vdp2yd0l7j": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "Heeh",
-        "_id": "1878cd31508-vxl3vdp2yd0l7j"
-      },
-      "1878cd3a71a-1k8urqx5isbvuy": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "fa",
-        "_id": "1878cd3a71a-1k8urqx5isbvuy"
-      },
-      "1878cd3e75f-17s4xjwtft6cwz": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "Affa",
-        "_id": "1878cd3e75f-17s4xjwtft6cwz"
-      },
-      "1878cd4af8a-8v326ic4j25vxc": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "Afafa",
-        "_id": "1878cd4af8a-8v326ic4j25vxc"
-      },
-      "1878cd9702f-9w16nm5plvqjmh": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "Heheyee",
-        "_id": "1878cd9702f-9w16nm5plvqjmh"
-      },
-      "1878ce31529-if75p6b77re4df": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "FG",
-        "_id": "1878ce31529-if75p6b77re4df"
-      },
-      "1878ce3d3d2-zjhxcyl5zwzp0c": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "Food",
-        "_id": "1878ce3d3d2-zjhxcyl5zwzp0c"
-      },
-      "1878ce3e61a-t6r7b727kzkmb3": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "Faf",
-        "_id": "1878ce3e61a-t6r7b727kzkmb3"
-      },
-      "1878ce5dc7e-3y08ycef9yrl59": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "Wat",
-        "_id": "1878ce5dc7e-3y08ycef9yrl59"
-      },
-      "1878ce6c9ed-sbxdaylxcdn43q": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "Chicken",
-        "_id": "1878ce6c9ed-sbxdaylxcdn43q"
-      },
-      "1878ce6e1c7-r9r2p4gm380x7r": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "XA",
-        "_id": "1878ce6e1c7-r9r2p4gm380x7r"
-      },
-      "1878ceb0301-noptdllj6fvg9l": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "Feet",
-        "_id": "1878ceb0301-noptdllj6fvg9l"
-      },
-      "1878cebb2d9-6r8v2vvqeu9kd5": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "Chicken",
-        "_id": "1878cebb2d9-6r8v2vvqeu9kd5"
-      },
-      "1878cebe781-1vw2jgvswe94jm": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "Fefe",
-        "_id": "1878cebe781-1vw2jgvswe94jm"
-      },
-      "1878ced36b5-7j8h4sry8vtl23": {
-        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
-        "category": "Waa",
-        "_id": "1878ced36b5-7j8h4sry8vtl23"
-      }
-    }
   ]
 ]

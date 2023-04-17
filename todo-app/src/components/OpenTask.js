@@ -66,10 +66,17 @@ export default function OpenTask( {id} ){
             const token = await getToken({ template: "productivitycorner" })
             console.log("OpenTask.js addCategoryType No complaints yet");
             await addCategoryToTodos(token,item);
-            await addCategory(token,item);
-            console.log("OpenTask.js addCategoryType Are you complaining?");
             const res = await getCategories(token,userId);
-            setCatValue(await res.json());
+            const data = await res.json();
+            if(!data.reduce((accumulator,currentValue) => accumulator || (currentValue.category === catName),false)) {
+                await addCategory(token,item);
+            }
+            // else {
+            //     alert("The " + categoryDetails + " category already exists. Please choose a different name :)");
+            // }
+            // await addCategory(token,item);
+            console.log("OpenTask.js addCategoryType Are you complaining?");
+            setCatValue(data);
             console.log("catValue: " + catValue);
             setCatAdded(false);
             // console.log("Cat value: " + catValue);

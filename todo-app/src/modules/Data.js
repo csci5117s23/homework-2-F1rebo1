@@ -37,8 +37,8 @@ export async function addComplete(authToken,todo){
     return await result.json();
 }
 
-export async function getTodoItem(authToken,userId,todoId) {
-    const result = await fetch(`${backend_base}/todos?userId=${userId}&_id=${todoId}`,{
+export async function getTodoItem(authToken,userId,taskId) {
+    const result = await fetch(`${backend_base}/todos?userId=${userId}&_id=${taskId}`,{
         'method':'GET',
         'headers': {'Authorization': 'Bearer ' + authToken}
     })
@@ -69,11 +69,11 @@ export async function getAllCompletedTasks(authToken,userId) {
     return data;
 }
 
-export async function editTodoItem(authToken,userId,todoId,text) {
-    let taskData = (await getTodoItem(authToken,userId,todoId))[0];
+export async function editTodoItem(authToken,userId,taskId,text) {
+    let taskData = (await getTodoItem(authToken,userId,taskId))[0];
     taskData.taskDescription = text;
     // console.log("taskData.taskDescription: " + taskData.taskDescription);
-    const result = fetch(`${backend_base}/updateTodoList?userId=${userId}&_id=${todoId}`, {
+    const result = fetch(`${backend_base}/updateTodoList?userId=${userId}&_id=${taskId}`, {
         'method': 'PUT',
         'headers': {
             'Authorization': 'Bearer ' + authToken,
@@ -82,14 +82,6 @@ export async function editTodoItem(authToken,userId,todoId,text) {
         'body': JSON.stringify(taskData)
         });
     return result;
-}
-
-export async function deleteTodo(authToken,todo) {
-    const result = await fetch(backend_base+"/todo/"+todo.id,{
-        'method':'DELETE',
-        'headers': {'Authorization': 'Bearer ' + authToken},
-    })
-    return await result.json();
 }
 
 export async function addCategory(authToken,item) {
@@ -101,6 +93,25 @@ export async function addCategory(authToken,item) {
             userId: item.userId,
             category: item.category
         })
+    })
+    return await result.json();
+}
+
+export async function deleteCategory(authToken,userId,catId) {
+    const result = await fetch(`${backend_base}/delCat?userId=${userId}&_id=${catId}`,{
+        'method':'DELETE',
+        'headers': {
+            'Authorization': 'Bearer ' + authToken,
+            'Content-Type': 'application/json'
+        }
+    })
+    return await result.json();
+}
+
+export async function getAllCategories(authToken,userId,cat) {
+    const result = await fetch(`${backend_base}/todos?userId=${userId}&category=${cat}`,{
+        'method':'GET',
+        'headers': {'Authorization': 'Bearer ' + authToken}
     })
     return await result.json();
 }
