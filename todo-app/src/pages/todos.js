@@ -204,9 +204,8 @@ export default function Todo(){
         // data[0].category == cat
         if(data.some(item => item.category === cat)){
             if(data.length > 0) return "todosExist";
-            else{
-                return "donesExist";
-            }
+        }else if(otherData.some(item => item.category === cat)){
+            if(otherData.length > 0) return "donesExist";
         }else{
             return "nothing";
         }

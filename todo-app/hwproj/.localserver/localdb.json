@@ -1,1 +1,37 @@
-[]
+[
+  [
+    "todos",
+    {
+      "1879322c7c2-0vbqbpjnl52hoe": {
+        "createdOn": "2023-04-18T07:00:43.027Z",
+        "category": "Bug",
+        "isCompleted": true,
+        "taskDescription": "New Bug just dropped :')",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "1879322c7c2-0vbqbpjnl52hoe"
+      },
+      "187932b5e4d-t77ar8us1viw5d": {
+        "createdOn": "2023-04-18T07:01:49.572Z",
+        "category": "Bug",
+        "isCompleted": true,
+        "taskDescription": "BugCat",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "187932b5e4d-t77ar8us1viw5d"
+      }
+    }
+  ],
+  [
+    "categories",
+    {
+      "187932a69a0-7jmu95iwcz93su": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Bug",
+        "_id": "187932a69a0-7jmu95iwcz93su"
+      }
+    }
+  ],
+  [
+    "_dbmetadata",
+    {}
+  ]
+]
