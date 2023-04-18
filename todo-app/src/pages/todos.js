@@ -184,7 +184,7 @@ export default function Todo(){
             // console.log("KeyVals:");
             // console.log(keyVals);
             setAddCategoryGroup(false);
-            settriggerCatAdded(true);
+            settriggerCatAdded(!triggerCatAdded);
             // console.log("todos.js addOrCreateCategory res: " + item);
         }
     }
