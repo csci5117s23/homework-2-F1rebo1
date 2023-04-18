@@ -132,6 +132,34 @@ export async function addCategoryToTodos(authToken,item) {
     return await result.json();
 }
 
+export async function editCategoryType(authToken,item,newCat) {
+    // const getPrevTodoInfo = await fetch(backend_base+`todos?userId=${item.userId}&category=${item.category}&_id=${item._id}`)
+    const result = await fetch(backend_base+`/todos?userId=${item.userId}&taskDescription=${item.taskDescription}&isCompleted=${item.isCompleted}&_id=${item._id}`,{
+        'method':'POST',
+        'headers': {'Authorization': 'Bearer ' + authToken,
+        'Content-Type': 'application/json'},
+        'body': JSON.stringify({
+            userId: item.userId,
+            taskDescription: item.taskDescription,
+            isCompleted: item.isCompleted,
+            category: newCat,
+            _id: item._id
+        })
+    })
+    return await result.json();
+}
+
+export async function deleteTodoOnCategoryTypeEdit(authToken,userId,catId) {
+    const result = await fetch(`${backend_base}/delCat?userId=${userId}&_id=${catId}`,{
+        'method':'DELETE',
+        'headers': {
+            'Authorization': 'Bearer ' + authToken,
+            'Content-Type': 'application/json'
+        }
+    })
+    return await result.json();
+}
+
 export async function getCategories(authToken,userId) {
     const result = await fetch(backend_base+`/categories?userId=${userId}`,{
         'method':'GET',

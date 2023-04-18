@@ -1,7 +1,7 @@
 import Sidebar from "@/components/sidebar";
 import { RedirectToSignIn, SignedIn, SignedOut, useAuth } from "@clerk/nextjs"
 import { useState, useEffect } from "react";
-import { getTodos, addTodo, setComplete, addCategory, deleteCategory, getCategories, getAllCategories } from "@/modules/Data.js";
+import { getTodos, addTodo, setComplete, addCategory, deleteCategory, getCategories, getAllCategories, getExistingTodoCategories, getExistingDoneCategories } from "@/modules/Data.js";
 import Link from 'next/link';
 import { useRouter } from "next/router";
 
@@ -61,17 +61,31 @@ export default function Todo(){
         })
     }, [isLoaded])
 
-    // async function deleteCurCategory(cat) {
-    //     console.log("Delete Category Button Clicked");
-    //     const token = await getToken({ template: "productivitycorner" });
-    //     // deleteCategory(token,userId,cat._id).then(() => {setAddCategoryGroup(true);})
-    //     deleteCategory(token,userId,cat._id);
-    //     getAllCategories(token,userId,cat).then((data) => {
-    //         data.forEach(async (task) => {
-    //             await editTodoTaskCat(token,userId,task._id,"");
-    //         });
+    // useEffect(() => {
+    //     async function openCategoryLink() {
+    //         if(userId) {
+    //             const res = await getExistingTodoCategories(token,userId);
+    //             const data = await res.json();
+    //             const otherRes = await getExistingDoneCategories(token,userId);
+    //             const otherData = await otherRes.json();
+
+    //             // const canGo = await router.push('/todos/'+cat);
+    //             // console.log("canGo?: " + canGo);
+    //             if(data.length > 0 || otherData.length == 0){
+    //                 router.push('/todos/'+cat);
+    //             }else{
+    //                 if(data.length == 0 && otherData.length == 0)
+    //                 router.push('/done/'+cat);
+    //             }
+    //             return data;
+    //         }
+    //     }
+    //     openCategoryLink().then((data) => {
+    //         if(data.length > 0){
+    //             router.push('/todos/'+cat);
+    //         }
     //     })
-    // }
+    // }, [isLoaded])
 
     async function deleteCurCategory(cat) {
         console.log("Delete Category Button Clicked");
@@ -136,6 +150,7 @@ export default function Todo(){
     // The code utilizing the JS .reduce function was quite helpfully understood from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
     // This was helpful in producing an alert which prevents our user from generating multiple todo categories with the same name.
     async function addOrCreateCategory(categoryDetails) {
+        // OG Stuff
         console.log("todos.js addOrCreateCategory Start");
         console.log(categoryDetails);
         if(categoryDetails && userId) {
@@ -145,13 +160,12 @@ export default function Todo(){
                 category: categoryDetails
             };
             const token = await getToken({ template: "productivitycorner" })
-            // await addCategory(token,item);
             const cats = await getCategories(token,userId);
-            console.log("Trying to Log categories: ");
             const data = await cats.json();
+            let showAlertOrNot = !data.reduce((accumulator,currentValue) => accumulator || (currentValue.category === categoryDetails),false);
             console.log(data);
             // console.log("CONsole: " + getCategories(token,userId).then((res) => {return res.json()}));
-            if(!data.reduce((accumulator,currentValue) => accumulator || (currentValue.category === categoryDetails),false)) {
+            if(showAlertOrNot) {
                 await addCategory(token,item);
                 setAddedCategoryName("");
                 setAddCategoryGroup(true);
@@ -170,19 +184,72 @@ export default function Todo(){
         }
     }
 
-    async function handleClick(cat){
-        // const navigationResult = await router.push('/todos/'+cat)
-        console.log("todos.js handleClick");
+    async function performPageRouting(cat){
         const token = await getToken({ template: "productivitycorner" });
-        const res = await getAllCategories(token,userId,cat);
-        console.log("handleClick Res: ");
-        console.log(res);
-        if(res.length == 0){
-            console.log("res is empty");
-            router.push('/goback');
+        // const res = await getAllCategories(token,userId,cat);
+        const res = await getExistingTodoCategories(token,userId);
+        const data = await res.json();
+        const otherRes = await getExistingDoneCategories(token,userId);
+        const otherData = await otherRes.json();
+
+        // console.log("handleClick Res: ");
+        // console.log(res);
+        // console.log(data);
+        // console.log("Data length: " + data.length + " and otherData length: " + otherData.length);
+        console.log("data.length: " + data.length);
+        console.log("data: ");
+        console.log(data);
+        console.log("Does data contain cat?: ");
+        console.log(data.some(item => item.category === cat));
+        // data[0].category == cat
+        if(data.some(item => item.category === cat)){
+            if(data.length > 0) return "todosExist";
+            else{
+                return "donesExist";
+            }
         }else{
-            router.push('/todos/'+cat);
+            return "nothing";
         }
+        // return (data[0].category == cat);
+        // if(data[0].category != cat) router.push('/goback');
+        // console.log("otherData.length: " + otherData.length);
+        // console.log("otherData: ");
+        // console.log(otherData);
+        // return (data.length > 0) ? true : (otherData.length  > 0) ? false : null;
+    }
+
+    async function handleClick(cat){    //The handleClick function checks for existing Todo/Done category items. If there are both todo AND done category items for the clicked category link
+        let boolVal = await performPageRouting(cat);   //then the function returns the todos/[category] page since that is the priority (as gleaned from the homework description).
+        console.log("boolVal: " + boolVal);
+        if(boolVal === "todosExist"){
+            router.push('todos/'+cat);
+        }else if(boolVal === "donesExist"){
+            router.push('done/'+cat);
+        }else{
+            router.push('/goback');
+        }
+        // console.log("todos.js handleClick");
+        // const token = await getToken({ template: "productivitycorner" });
+        // const res = await getAllCategories(token,userId,cat);
+        // const res = await getExistingTodoCategories(token,userId);
+        // const data = await res.json();
+        // const otherRes = await getExistingDoneCategories(token,userId);
+        // const otherData = await otherRes.json();
+
+        // console.log("handleClick Res: ");
+        // console.log(res);
+        // console.log(data);
+        // console.log("Data length: " + data.length + " and otherData length: " + otherData.length);
+        // if(data.length > 0 || otherData.length == 0){
+        //     router.push('/todos/'+cat);
+        // }else{
+        //     router.push('/done/'+cat);
+        // }
+        // if(data.length == 0 && otherData.length == 0){
+            //     router.push('/goback');
+            // }else{
+            //     router.push('/done/'+cat);
+            // }
 
         // console.log("navigationResult: " + navigationResult);
         // if (navigationResult) {
@@ -246,7 +313,7 @@ export default function Todo(){
                     return (
                     <>
                         <div><p><Link href={`/todos/${cat}`}><button className="button is-primary is-small" onClick={(e) => {
-                            // e.preventDefault();
+                            e.preventDefault();
                             handleClick(cat)
                         }}>{cat}</button></Link>
                         <button className="button is-info is-danger is-small"
@@ -280,35 +347,3 @@ export default function Todo(){
 
     
 };
-
-{/* <button className="button is-info is-danger is-small"
-                            onClick={async()=>{await deleteCurCategory(categoriesAdded);}}>Delete&#128465;</button> */}
-
-{/* <button className="button is-primary" onClick={addOrCreate}>Add task</button>
-                    <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)} ariaHideApp={false} 
-                    style={myStyles} onChange={(e) => setnewTodoItem(e.target.value)}
-                    onKeyDown={(e) => { if(e.key === 'Enter'){addOrCreate()} }}>
-                        <textarea className="textarea is-primary is-normal" placeholder="Enter a task description" rows="2" cols="15"></textarea>
-                        <button className="button is-success" onClick={writeTodoContent}>Add</button>
-                        <button className="button is-danger" onClick={() => setIsOpen(false)}>Cancel</button>
-                    </Modal> */}
-
-// function MakeItem( { myStyles, isOpen, setIsOpen } ){
-//     // const token = await getToken({template: 'prductivitycorner'});
-//     // const res = getTodos(token);
-//     // console.log(res);
-    
-//     function writeTodoContent(){
-//         setIsOpen(false);
-//         const [itemContent,setItemContent] = useState("");
-
-//     }
-
-//     return (<>
-//             <TodoItem itemContent={itemContent}></TodoItem>
-//             <div>
-//                 <button className="button is-primary" onClick={() => setIsOpen(true)}>Add task</button>
-//             </div>
-//         </>
-//     );
-// }

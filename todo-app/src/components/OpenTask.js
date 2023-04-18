@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useAuth } from '@clerk/nextjs';
-import { getTodoItem, editTodoItem, addCategory, getCategories, addCategoryToTodos } from "@/modules/Data.js";
+import { getTodoItem, editTodoItem, addCategory, getCategories, addCategoryToTodos, editCategoryType, deleteTodoOnCategoryTypeEdit } from "@/modules/Data.js";
 import { useRouter } from "next/router";
 
 export default function OpenTask( {id} ){
@@ -50,6 +50,40 @@ export default function OpenTask( {id} ){
         console.log("catAdded val is: " + catAdded);
     }
 
+    // async function addCategoryType(catName) {
+    //     console.log("Do we make it here?")
+    //     console.log(catValue);
+    //     console.log("addCategoryType catAdded value is: " + catAdded);
+    //     console.log(userId);
+    //     if(catAdded && catValue && userId) {
+    //         var item = {
+    //             userId: userId,
+    //             taskDescription: openItem,
+    //             isCompleted: false,
+    //             category: catName,
+    //             _id: id
+    //         };
+    //         const token = await getToken({ template: "productivitycorner" })
+    //         console.log("OpenTask.js addCategoryType No complaints yet");
+    //         await addCategoryToTodos(token,item);
+    //         const res = await getCategories(token,userId);
+    //         const data = await res.json();
+    //         if(!data.reduce((accumulator,currentValue) => accumulator || (currentValue.category === catName),false)) {
+    //             await addCategory(token,item);
+    //         }
+    //         // else {
+    //         //     alert("The " + categoryDetails + " category already exists. Please choose a different name :)");
+    //         // }
+    //         // await addCategory(token,item);
+    //         console.log("OpenTask.js addCategoryType Are you complaining?");
+    //         setCatValue(data);
+    //         console.log("catValue: " + catValue);
+    //         setCatAdded(false);
+    //         // console.log("Cat value: " + catValue);
+    //         console.log("OpenTask.js addCategoryType res: " + item);
+    //     }
+    // }
+
     async function addCategoryType(catName) {
         console.log("Do we make it here?")
         console.log(catValue);
@@ -65,7 +99,9 @@ export default function OpenTask( {id} ){
             };
             const token = await getToken({ template: "productivitycorner" })
             console.log("OpenTask.js addCategoryType No complaints yet");
+            await deleteTodoOnCategoryTypeEdit(token,userId,item._id);
             await addCategoryToTodos(token,item);
+            // await editCategoryType(token,item,catName);
             const res = await getCategories(token,userId);
             const data = await res.json();
             if(!data.reduce((accumulator,currentValue) => accumulator || (currentValue.category === catName),false)) {
