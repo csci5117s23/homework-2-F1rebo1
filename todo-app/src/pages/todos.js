@@ -15,6 +15,9 @@ export default function Todo(){
     const [addedCategoryName,setAddedCategoryName] = useState("");
     const [categoriesAdded,setcategoriesAdded] = useState([]);
 
+    const [categoryDeleted,setCategoryDeleted] = useState(false);   //New state variable created explicitly to trigger useEffect to render category deletion
+    const [triggerCatAdded,settriggerCatAdded] = useState(false);   //New state variable created explicitly to trigger useEffect to render category deletion
+
     const [keyVals,setKeyVals] = useState([]);
     const router = useRouter();
 
@@ -59,7 +62,7 @@ export default function Todo(){
             // console.log(categories);
             setAddCategoryGroup(false);
         })
-    }, [isLoaded])
+    }, [isLoaded,triggerCatAdded,categoryDeleted])
 
     // useEffect(() => {
     //     async function openCategoryLink() {
@@ -112,6 +115,7 @@ export default function Todo(){
         // console.log("CurCat: " + curCat);
         // console.log(curCat);
         deleteCategory(token,userId,curPair._id);
+        setCategoryDeleted(true);
     }
     
     async function addOrCreate() {
@@ -180,6 +184,7 @@ export default function Todo(){
             // console.log("KeyVals:");
             // console.log(keyVals);
             setAddCategoryGroup(false);
+            settriggerCatAdded(true);
             // console.log("todos.js addOrCreateCategory res: " + item);
         }
     }
@@ -227,33 +232,6 @@ export default function Todo(){
         }else{
             router.push('/goback');
         }
-        // console.log("todos.js handleClick");
-        // const token = await getToken({ template: "productivitycorner" });
-        // const res = await getAllCategories(token,userId,cat);
-        // const res = await getExistingTodoCategories(token,userId);
-        // const data = await res.json();
-        // const otherRes = await getExistingDoneCategories(token,userId);
-        // const otherData = await otherRes.json();
-
-        // console.log("handleClick Res: ");
-        // console.log(res);
-        // console.log(data);
-        // console.log("Data length: " + data.length + " and otherData length: " + otherData.length);
-        // if(data.length > 0 || otherData.length == 0){
-        //     router.push('/todos/'+cat);
-        // }else{
-        //     router.push('/done/'+cat);
-        // }
-        // if(data.length == 0 && otherData.length == 0){
-            //     router.push('/goback');
-            // }else{
-            //     router.push('/done/'+cat);
-            // }
-
-        // console.log("navigationResult: " + navigationResult);
-        // if (navigationResult) {
-        //     router.push('/goback');
-        // }
     }
 
     if(!isLoaded){
