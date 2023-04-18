@@ -43,7 +43,7 @@ export default function Todo(){
         }).catch(() => {
             router.push('/404');
         });
-    }, [isLoaded])
+    }, [isLoaded,categoryDeleted])
 
     useEffect(() => {
         async function showCategories() {
