@@ -115,7 +115,7 @@ export default function Todo(){
         // console.log("CurCat: " + curCat);
         // console.log(curCat);
         deleteCategory(token,userId,curPair._id);
-        setCategoryDeleted(true);
+        setCategoryDeleted(!categoryDeleted);
     }
     
     async function addOrCreate() {
