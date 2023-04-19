@@ -5,6 +5,7 @@ import { getAllCompletedTasks } from "@/modules/Data.js";
 export default function CompletedTasks() {
     const [items,setItems] = useState([]);
     const { isLoaded, userId, getToken } = useAuth();
+    const [triggerReload,setTriggerReload] = useState(false);
 
     useEffect(() => {
         async function process() {
@@ -22,8 +23,9 @@ export default function CompletedTasks() {
         }
         process().then((res) => {
             setItems(res);
+            setTriggerReload(!triggerReload);
         });
-    }, [isLoaded])
+    }, [isLoaded,triggerReload])
 
     if(!isLoaded) {
         return <span> Loading {`:)`} </span>

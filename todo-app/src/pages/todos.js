@@ -294,7 +294,7 @@ export default function Todo(){
                             handleClick(cat)
                         }}>{cat}</button></Link>
                         <button className="button is-info is-danger is-small"
-                            onClick={() => deleteCurCategory(cat)}>Delete Category&#128465;</button></p></div><br></br>
+                            onClick={async () => await deleteCurCategory(cat)}>Delete Category&#128465;</button></p></div><br></br>
                     </>);
                 })}
             </div>
