@@ -5,7 +5,8 @@ import { getAllCompletedTasks } from "@/modules/Data.js";
 export default function CompletedTasks() {
     const [items,setItems] = useState([]);
     const { isLoaded, userId, getToken } = useAuth();
-    const [triggerReload,setTriggerReload] = useState(false);
+    const [triggerReload,setTriggerReload] = useState(true);
+    const [triggerUseEffect,settriggerUseEffect] = useState(false);
 
     useEffect(() => {
         async function process() {
@@ -23,9 +24,26 @@ export default function CompletedTasks() {
         }
         process().then((res) => {
             setItems(res);
-            setTriggerReload(!triggerReload);
+            setTriggerReload(false);
         });
     }, [isLoaded,triggerReload])
+
+    useEffect(() => {
+        async function reloadDone() {
+            try {
+                if(userId && !triggerReload){
+                    await process();
+                    settriggerUseEffect(true);
+                }
+            } catch (error) {
+                console.error('Failed to get completed items', error);
+                return [];
+            }
+        }reloadDone().then((res) => {
+            setTriggerReload(false);
+            settriggerUseEffect(false);
+        })
+    }, [isLoaded,triggerUseEffect])
 
     if(!isLoaded) {
         return <span> Loading {`:)`} </span>
