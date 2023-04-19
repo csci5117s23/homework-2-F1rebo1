@@ -23,7 +23,7 @@ export default function CompletedTasks() {
         }
         process().then((res) => {
             setItems(res);
-            setTriggerReload(true);
+            setTriggerReload(!triggerReload);
         });
     }, [isLoaded,triggerReload])
 
@@ -35,7 +35,7 @@ export default function CompletedTasks() {
                 <div className="flex-container">
                     <ul>
                         {items.map(item => {
-                            console.log(item.taskDescription)
+                            // console.log(item.taskDescription)
                             return(
                                 <li key={item._id}>
                                     {item.taskDescription}
