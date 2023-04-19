@@ -234,6 +234,11 @@ export default function Todo(){
         }
     }
 
+    function shorten(taskDesc) {
+        if(taskDesc.length > 15) return `${taskDesc.substring(0,15)}...`;
+        else return taskDesc;
+    }
+
     if(!isLoaded){
         return <span> Loading {`:)`} </span>
     }else{
@@ -262,7 +267,7 @@ export default function Todo(){
             <div><button className="button is-link" onClick = {addNewCat}>Create New Category</button></div><br></br>
             {items.map((item) => (
                 <li key={item._id}>
-                    {item.taskDescription}<br></br>
+                    {shorten(item.taskDescription)}<br></br>
                     <Link href={`/todo/${item._id}`}><button className="button is-info is-small">Edit&#9998;</button></Link>
                     <Link href="/done"><button className="button is-warning is-small" 
                         onClick={async () => {

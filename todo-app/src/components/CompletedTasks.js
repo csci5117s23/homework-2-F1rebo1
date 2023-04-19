@@ -44,6 +44,11 @@ export default function CompletedTasks() {
         })
     }, [isLoaded,triggerUseEffect])
 
+    function shorten(taskDesc) {
+        if(taskDesc.length > 15) return `${taskDesc.substring(0,15)}...`;
+        else return taskDesc;
+    }
+
     if(!isLoaded) {
         return <span> Loading {`:)`} </span>
     } else {
@@ -55,7 +60,8 @@ export default function CompletedTasks() {
                             // console.log(item.taskDescription)
                             return(
                                 <li key={item._id}>
-                                    {item.taskDescription}
+                                    {shorten(item.taskDescription)}
+                                    {/* {item.taskDescription} */}
                                 </li>
                             )
                         })}
