@@ -23,7 +23,7 @@ export default function CompletedTasks() {
         }
         process().then((res) => {
             setItems(res);
-            setTriggerReload(!triggerReload);
+            setTriggerReload(true);
         });
     }, [isLoaded,triggerReload])
 
