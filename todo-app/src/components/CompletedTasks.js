@@ -32,14 +32,13 @@ export default function CompletedTasks() {
         async function reloadDone() {
             try {
                 if(userId && !triggerReload){
-                    await process();
                     settriggerUseEffect(true);
                 }
             } catch (error) {
                 console.error('Failed to get completed items', error);
                 return [];
             }
-        }reloadDone().then((res) => {
+        }reloadDone().then(() => {
             setTriggerReload(false);
             settriggerUseEffect(false);
         })
