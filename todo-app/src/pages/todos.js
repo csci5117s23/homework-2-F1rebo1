@@ -18,8 +18,6 @@ export default function Todo(){
 
     const [categoryDeleted,setCategoryDeleted] = useState(false);   //New state variable created explicitly to trigger useEffect to render category deletion
     const [triggerCatAdded,settriggerCatAdded] = useState(false);   //New state variable created explicitly to trigger useEffect to render category deletion
-    const [deleteCat,setDeleteCat] = useState(false);   //New state variable created explicitly to trigger useEffect to render category deletion
-    const [add,setAdd] = useState(false);   //New state variable created explicitly to trigger useEffect to render category deletion
 
     const [keyVals,setKeyVals] = useState([]);
     const router = useRouter();
@@ -65,7 +63,7 @@ export default function Todo(){
             // console.log(categories);
             setAddCategoryGroup(false);
         })
-    }, [isLoaded,triggerCatAdded,categoryDeleted,deleteCat,add])
+    }, [isLoaded,triggerCatAdded,categoryDeleted])
 
     // useEffect(() => {
     //     async function openCategoryLink() {
@@ -118,8 +116,7 @@ export default function Todo(){
         // console.log("CurCat: " + curCat);
         // console.log(curCat);
         deleteCategory(token,userId,curPair._id);
-        setCategoryDeleted(true);
-        setDeleteCat(true);
+        triggerDeleteCat();
     }
     
     async function addOrCreate() {
@@ -155,6 +152,14 @@ export default function Todo(){
         setAddCategoryGroup(true);
     }
 
+    function triggerAddNewCat(){
+        settriggerCatAdded(true);
+    }
+
+    function triggerDeleteCat(){
+        setCategoryDeleted(true);
+    }
+
     // The code utilizing the JS .reduce function was quite helpfully understood from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
     // This was helpful in producing an alert which prevents our user from generating multiple todo categories with the same name.
     async function addOrCreateCategory(categoryDetails) {
@@ -188,8 +193,7 @@ export default function Todo(){
             // console.log("KeyVals:");
             // console.log(keyVals);
             setAddCategoryGroup(false);
-            settriggerCatAdded(true);
-            setAdd(true);
+            triggerAddNewCat();
             // console.log("todos.js addOrCreateCategory res: " + item);
         }
     }
@@ -202,16 +206,11 @@ export default function Todo(){
         const otherRes = await getExistingDoneCategories(token,userId);
         const otherData = await otherRes.json();
 
-        // console.log("handleClick Res: ");
-        // console.log(res);
-        // console.log(data);
-        // console.log("Data length: " + data.length + " and otherData length: " + otherData.length);
         console.log("data.length: " + data.length);
         console.log("data: ");
         console.log(data);
         console.log("Does data contain cat?: ");
         console.log(data.some(item => item.category === cat));
-        // data[0].category == cat
         if(data.some(item => item.category === cat)){
             if(data.length > 0) return "todosExist";
         }else if(otherData.some(item => item.category === cat)){
@@ -219,12 +218,6 @@ export default function Todo(){
         }else{
             return "nothing";
         }
-        // return (data[0].category == cat);
-        // if(data[0].category != cat) router.push('/goback');
-        // console.log("otherData.length: " + otherData.length);
-        // console.log("otherData: ");
-        // console.log(otherData);
-        // return (data.length > 0) ? true : (otherData.length  > 0) ? false : null;
     }
 
     async function handleClick(cat){    //The handleClick function checks for existing Todo/Done category items. If there are both todo AND done category items for the clicked category link
