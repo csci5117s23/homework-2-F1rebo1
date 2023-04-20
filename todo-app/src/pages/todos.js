@@ -116,7 +116,7 @@ export default function Todo(){
         // console.log("CurCat: " + curCat);
         // console.log(curCat);
         deleteCategory(token,userId,curPair._id);
-        setCategoryDeleted(!categoryDeleted);
+        setCategoryDeleted(true);
     }
     
     async function addOrCreate() {
@@ -185,7 +185,7 @@ export default function Todo(){
             // console.log("KeyVals:");
             // console.log(keyVals);
             setAddCategoryGroup(false);
-            settriggerCatAdded(!triggerCatAdded);
+            settriggerCatAdded(true);
             // console.log("todos.js addOrCreateCategory res: " + item);
         }
     }
@@ -255,7 +255,7 @@ export default function Todo(){
                             onChange={(e) => setAddedCategoryName(e.target.value)}
                             rows="2"
                         ></textarea>
-                        <button className="button is-success" onClick={() => {addOrCreateCategory(addedCategoryName)}}>Add Category</button>
+                        <button className="button is-success" onClick={async () => { await addOrCreateCategory(addedCategoryName)}}>Add Category</button>
                     </div>
                 </>
             );
