@@ -47,7 +47,7 @@ export async function getTodoItem(authToken,userId,taskId) {
 
 export async function setComplete(authToken,userId,taskId) {
     let taskData = (await getTodoItem(authToken,userId,taskId))[0];
-    taskData.isCompleted = !taskData.isCompleted;
+    taskData.isCompleted = true;
     const result = fetch(`${backend_base}/updateTodoList?userId=${userId}&_id=${taskId}`, {
         'method': 'PUT',
         'headers': {
