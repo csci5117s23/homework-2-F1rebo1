@@ -165,8 +165,6 @@ export async function getCategories(authToken,userId) {
         'method':'GET',
         'headers': {'Authorization': 'Bearer ' + authToken}
     })
-    console.log("Pongal");
-    console.log(result);
     return result;
 }
 

@@ -62,6 +62,8 @@ export default function Todo(){
             // console.log("I am here 3: ");
             // console.log(categories);
             setAddCategoryGroup(false);
+            settriggerCatAdded(false);
+            setCategoryDeleted(false);
         })
     }, [isLoaded,triggerCatAdded,categoryDeleted])
 
