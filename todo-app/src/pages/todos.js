@@ -18,6 +18,8 @@ export default function Todo(){
 
     const [categoryDeleted,setCategoryDeleted] = useState(false);   //New state variable created explicitly to trigger useEffect to render category deletion
     const [triggerCatAdded,settriggerCatAdded] = useState(false);   //New state variable created explicitly to trigger useEffect to render category deletion
+    const [deleteCat,setDeleteCat] = useState(false);   //New state variable created explicitly to trigger useEffect to render category deletion
+    const [add,setAdd] = useState(false);   //New state variable created explicitly to trigger useEffect to render category deletion
 
     const [keyVals,setKeyVals] = useState([]);
     const router = useRouter();
@@ -44,7 +46,7 @@ export default function Todo(){
         }).catch(() => {
             router.push('/404');
         });
-    }, [isLoaded,triggerCatAdded,categoryDeleted,showAfterDelete])
+    }, [isLoaded,showAfterDelete])
 
     useEffect(() => {
         async function showCategories() {
@@ -63,7 +65,7 @@ export default function Todo(){
             // console.log(categories);
             setAddCategoryGroup(false);
         })
-    }, [isLoaded,triggerCatAdded,categoryDeleted])
+    }, [isLoaded,triggerCatAdded,categoryDeleted,deleteCat,add])
 
     // useEffect(() => {
     //     async function openCategoryLink() {
@@ -117,6 +119,7 @@ export default function Todo(){
         // console.log(curCat);
         deleteCategory(token,userId,curPair._id);
         setCategoryDeleted(true);
+        setDeleteCat(true);
     }
     
     async function addOrCreate() {
@@ -186,6 +189,7 @@ export default function Todo(){
             // console.log(keyVals);
             setAddCategoryGroup(false);
             settriggerCatAdded(true);
+            setAdd(true);
             // console.log("todos.js addOrCreateCategory res: " + item);
         }
     }
