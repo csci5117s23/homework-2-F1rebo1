@@ -41,6 +41,8 @@ export default function Todo(){
             // console.log(res);
             setItems(res.sort((a,b) => new Date(b.createdOn)-new Date(a.createdOn)));
             setItems(res);
+            setaddNewTask(false);
+            setshowAfterDelete(false);
         }).catch(() => {
             router.push('/404');
         });
@@ -67,32 +69,6 @@ export default function Todo(){
         })
     }, [isLoaded,triggerCatAdded,categoryDeleted])
 
-    // useEffect(() => {
-    //     async function openCategoryLink() {
-    //         if(userId) {
-    //             const res = await getExistingTodoCategories(token,userId);
-    //             const data = await res.json();
-    //             const otherRes = await getExistingDoneCategories(token,userId);
-    //             const otherData = await otherRes.json();
-
-    //             // const canGo = await router.push('/todos/'+cat);
-    //             // console.log("canGo?: " + canGo);
-    //             if(data.length > 0 || otherData.length == 0){
-    //                 router.push('/todos/'+cat);
-    //             }else{
-    //                 if(data.length == 0 && otherData.length == 0)
-    //                 router.push('/done/'+cat);
-    //             }
-    //             return data;
-    //         }
-    //     }
-    //     openCategoryLink().then((data) => {
-    //         if(data.length > 0){
-    //             router.push('/todos/'+cat);
-    //         }
-    //     })
-    // }, [isLoaded])
-
     async function deleteCurCategory(cat) {
         console.log("Delete Category Button Clicked");
         const token = await getToken({ template: "productivitycorner" });
@@ -111,12 +87,8 @@ export default function Todo(){
         }
         console.log("cat: " + cat);
         console.log("keyVals[0].category: " + keyVals[0].category);
-        // console.log("keyVals[" + cat + "]: " + keyVals[`"${cat}"`]);
-        // const curCat = keyVals[`${cat}`];
         let curPair = keyVals[curKey];
         console.log("curPair: " + curPair.category);
-        // console.log("CurCat: " + curCat);
-        // console.log(curCat);
         deleteCategory(token,userId,curPair._id);
         triggerDeleteCat();
     }
@@ -139,8 +111,6 @@ export default function Todo(){
             setcategoriesAdded(data.map((x) => x.category))
             console.log("todos.js addOrCreate Are you complaining?");
             const res = await getTodos(token,userId);
-            // await setToDone(token,userId,todoItem._id);
-            // setAddingTodo(true);
             setItems(res);
             setnewTodoItem("");
             setaddNewTask(true);
@@ -187,22 +157,16 @@ export default function Todo(){
             } else {
                 alert("The " + categoryDetails + " category already exists. Please choose a different name :)");
             }
-            // console.log(res.json().then((data) => console.log(data)));
             console.log("Data: ");
             console.log(data);
-            // setKeyVals(data);
             setcategoriesAdded(data.map((x) => x.category))
-            // console.log("KeyVals:");
-            // console.log(keyVals);
             setAddCategoryGroup(false);
             triggerAddNewCat();
-            // console.log("todos.js addOrCreateCategory res: " + item);
         }
     }
 
     async function performPageRouting(cat){
         const token = await getToken({ template: "productivitycorner" });
-        // const res = await getAllCategories(token,userId,cat);
         const res = await getExistingTodoCategories(token,userId);
         const data = await res.json();
         const otherRes = await getExistingDoneCategories(token,userId);
@@ -230,6 +194,7 @@ export default function Todo(){
         }else if(boolVal === "donesExist"){
             router.push('done/'+cat);
         }else{
+            console.log("Path actually routing to: todos/" + cat);
             router.push('/goback');
         }
     }
@@ -269,13 +234,6 @@ export default function Todo(){
                 <li key={item._id}>
                     {shorten(item.taskDescription)}<br></br>
                     <Link href={`/todo/${item._id}`}><button className="button is-info is-small">Edit&#9998;</button></Link>
-                    {/* <Link href="/done"><button className="button is-warning is-small" 
-                        onClick={async () => {
-                            console.log("Mark this boi as done: " + item._id);
-                            const token = await getToken({ template: "productivitycorner" });
-                            await setComplete(token,userId,item._id);
-                            setaddNewTask(true);
-                        }}>&#10024;Done&#10004;</button></Link> */}
                     <button className="button is-warning is-small" 
                         onClick={async () => {
                             console.log("Mark this boi as done: " + item._id);
@@ -291,20 +249,31 @@ export default function Todo(){
                 Categories added:
             </h3><br></br>
             <div>
-                {/* {keyVals?.map((taskCat) => {
-                    return (
-                    <>
-                        <div><p><Link href={`/todos/${taskCat.category}`}><button className="button is-primary" onClick={() => handleClick(taskCat)}>{taskCat.category}</button></Link>
-                        <button className="button is-info is-danger is-small"
-                            onClick={async()=>{await deleteCurCategory(cat);}}>Delete Category&#128465;</button></p></div><br></br>
-                    </>);
-                })} */}
-                {categoriesAdded?.map((cat) => {
+                {/* {categoriesAdded?.map((cat) => {
+                    console.log("Cat is:");
+                    console.log(cat);
                     return (
                     <>
                         <div><p><Link href={`/todos/${cat}`}><button className="button is-primary is-small" onClick={(e) => {
                             e.preventDefault();
                             handleClick(cat)
+                        }}>{cat}</button></Link>
+                        <button className="button is-info is-danger is-small"
+                            onClick={async () => await deleteCurCategory(cat)}>Delete Category&#128465;</button></p></div><br></br>
+                    </>);
+                })} */}
+                {categoriesAdded?.map((cat) => {
+                    let actualPath ="";
+                    for(let c = 0; c < cat.length; c++){
+                        if(cat[c] != ' ') actualPath += cat[c];
+                        else actualPath += '%20';
+                    }
+                    console.log("actualPath: " + actualPath);
+                    return (
+                    <>
+                        <div><p><Link href={`/todos/${actualPath}`}><button className="button is-primary is-small" onClick={(e) => {
+                            e.preventDefault();
+                            handleClick(actualPath)
                         }}>{cat}</button></Link>
                         <button className="button is-info is-danger is-small"
                             onClick={async () => await deleteCurCategory(cat)}>Delete Category&#128465;</button></p></div><br></br>
