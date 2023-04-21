@@ -249,7 +249,7 @@ export default function Todo(){
                 Categories added:
             </h3><br></br>
             <div>
-                {/* {categoriesAdded?.map((cat) => {
+                {categoriesAdded?.map((cat) => {
                     console.log("Cat is:");
                     console.log(cat);
                     return (
@@ -261,8 +261,8 @@ export default function Todo(){
                         <button className="button is-info is-danger is-small"
                             onClick={async () => await deleteCurCategory(cat)}>Delete Category&#128465;</button></p></div><br></br>
                     </>);
-                })} */}
-                {categoriesAdded?.map((cat) => {
+                })}
+                {/* {categoriesAdded?.map((cat) => {
                     let actualPath ="";
                     for(let c = 0; c < cat.length; c++){
                         if(cat[c] != ' ') actualPath += cat[c];
@@ -278,7 +278,7 @@ export default function Todo(){
                         <button className="button is-info is-danger is-small"
                             onClick={async () => await deleteCurCategory(cat)}>Delete Category&#128465;</button></p></div><br></br>
                     </>);
-                })}
+                })} */}
             </div>
 
             </>)

@@ -169,12 +169,44 @@
         "taskDescription": "Whaha",
         "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
         "_id": "187a20350bd-5u4yprmatrcgge"
+      },
+      "187a27a71d0-364bbvjywzzjs2": {
+        "createdOn": "2023-04-21T06:22:41.097Z",
+        "category": "Hello Sir",
+        "isCompleted": false,
+        "taskDescription": "ahere",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "187a27a71d0-364bbvjywzzjs2"
+      },
+      "187a27b2b13-r8pjjq3ltynz30": {
+        "createdOn": "2023-04-21T06:23:24.900Z",
+        "category": "Hello Sir",
+        "isCompleted": false,
+        "taskDescription": "Pongal",
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "_id": "187a27b2b13-r8pjjq3ltynz30"
       }
     }
   ],
   [
     "categories",
-    {}
+    {
+      "187a27a83ff-pku7wpr14upu34": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Hungala\n",
+        "_id": "187a27a83ff-pku7wpr14upu34"
+      },
+      "187a27a94fc-ionv4e96j1mohj": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Hello Sir",
+        "_id": "187a27a94fc-ionv4e96j1mohj"
+      },
+      "187a27b3bf4-bxp9gvh1tqf6bo": {
+        "userId": "user_2OLBP6WvMMg4b08QdhHeESfHlrA",
+        "category": "Hungala",
+        "_id": "187a27b3bf4-bxp9gvh1tqf6bo"
+      }
+    }
   ],
   [
     "_dbmetadata",

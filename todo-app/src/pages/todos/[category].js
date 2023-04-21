@@ -5,9 +5,7 @@ import { RedirectToSignIn, SignedIn, SignedOut, useAuth } from "@clerk/nextjs"
 export default function ShowTask(){
     const router = useRouter();
     const { isLoaded, userId, getToken } = useAuth();
-    
-    const curPath = router.asPath;
-    const category = curPath.substring(curPath.lastIndexOf('/') + 1);
+    const { category } = router.query;
 
     // async function checkCategory(){
     //     const token = await getToken({ template: "productivitycorner" })
